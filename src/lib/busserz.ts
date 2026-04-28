@@ -86,6 +86,22 @@ function resolveCategory(entity: RawEntity): string {
   return resolveName(firstCategory as RawEntity);
 }
 
+function resolveImageUrl(entity: RawEntity): string | undefined {
+  const assets = entity.assets;
+  if (!Array.isArray(assets) || assets.length === 0) {
+    return undefined;
+  }
+
+  const firstAsset = assets[0];
+  if (!firstAsset || typeof firstAsset !== "object") {
+    return undefined;
+  }
+
+  const assetRecord = firstAsset as RawEntity;
+  const url = assetRecord.url;
+  return typeof url === "string" ? url : undefined;
+}
+
 async function fetchBusserz(path: string): Promise<unknown> {
   try {
     const response = await fetch(`${BUSSERZ_API_BASE}/${path}`, {
@@ -125,6 +141,7 @@ export async function getBusserzProducts(): Promise<Product[]> {
         description: resolveDescription(item) || "No description available.",
         price: Number.isFinite(price) ? price : 0,
         category: resolveCategory(item),
+        imageUrl: resolveImageUrl(item),
       } satisfies Product;
     });
 }
@@ -150,6 +167,7 @@ export async function getBusserzMenus(): Promise<MenuSection[]> {
             name: resolveName(product),
             details: resolveDescription(product) || "Chef recommendation",
             price: Number.isFinite(price) ? price : 0,
+            imageUrl: resolveImageUrl(product),
           };
         });
 
@@ -157,6 +175,7 @@ export async function getBusserzMenus(): Promise<MenuSection[]> {
         id: String(menu.id ?? crypto.randomUUID()),
         title: resolveName(menu),
         description: resolveDescription(menu),
+        imageUrl: resolveImageUrl(menu),
         items: normalizedProducts,
       } satisfies MenuSection;
     });

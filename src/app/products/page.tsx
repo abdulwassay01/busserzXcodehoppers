@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getProducts } from "@/lib/products";
 
 export default async function ProductsPage() {
@@ -16,6 +17,19 @@ export default async function ProductsPage() {
       <div className="container-wide products-grid anim-rise-delay">
         {products.map((product) => (
           <article key={product.id} className="product-card">
+            {product.imageUrl ? (
+              <div className="product-image">
+                <Image
+                  src={product.imageUrl}
+                  alt={product.name}
+                  width={300}
+                  height={200}
+                  unoptimized
+                />
+              </div>
+            ) : (
+              <div className="product-image no-image">No image</div>
+            )}
             <span className="badge">{product.category}</span>
             <h2 className="section-title">{product.name}</h2>
             <p className="muted">{product.description}</p>
