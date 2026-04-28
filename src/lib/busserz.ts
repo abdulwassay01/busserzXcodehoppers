@@ -6,6 +6,7 @@ type RawEntity = Record<string, unknown>;
 const BUSSERZ_API_BASE = process.env.BUSSERZ_API_BASE ?? "https://data.busserz.com/v2";
 const BUSSERZ_API_KEY = process.env.BUSSERZ_API_KEY ?? "IahObeaKZBCyn0gqo01wVLdrJMnUH0ye";
 const BUSSERZ_SPACE_ID = process.env.BUSSERZ_SPACE_ID ?? "PK00001001";
+const BUSSERZ_REVALIDATE_SECONDS = 30;
 
 function textFromLocalized(value: unknown): string {
   if (typeof value === "string") {
@@ -104,22 +105,28 @@ function resolveImageUrl(entity: RawEntity): string | undefined {
 
 async function fetchBusserz(path: string): Promise<unknown> {
   try {
+    // Keep local/runtime reads fresh while accepting that static export still snapshots data at build time.
     const response = await fetch(`${BUSSERZ_API_BASE}/${path}`, {
       headers: {
         "x-bz-api-key": BUSSERZ_API_KEY,
         "x-bz-space-id": BUSSERZ_SPACE_ID,
       },
-      next: { revalidate: 300 },
+      next: { revalidate: BUSSERZ_REVALIDATE_SECONDS },
     });
 
     if (!response.ok) {
-      console.warn(`Busserz API request failed for ${path} with ${response.status}. Returning empty data.`);
+      console.warn(
+        `Busserz API request failed for ${BUSSERZ_API_BASE}/${path} with status ${response.status}. Returning empty data.`,
+      );
       return { items: [] };
     }
 
     return response.json();
   } catch (error) {
-    console.warn(`Busserz API fetch error for ${path}:`, error instanceof Error ? error.message : String(error));
+    console.warn(
+      `Busserz API fetch error for ${BUSSERZ_API_BASE}/${path}:`,
+      error instanceof Error ? error.message : String(error),
+    );
     return { items: [] };
   }
 }
