@@ -32,6 +32,10 @@ jobs:
         run: npm ci
 
       - name: Build static site
+        env:
+          BUSSERZ_API_BASE: ${{ vars.BUSSERZ_API_BASE || 'https://data.busserz.com/v2' }}
+          BUSSERZ_API_KEY: ${{ secrets.BUSSERZ_API_KEY }}
+          BUSSERZ_SPACE_ID: ${{ secrets.BUSSERZ_SPACE_ID }}
         run: npm run build
 
       - name: Setup Pages
