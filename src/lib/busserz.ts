@@ -87,19 +87,25 @@ function resolveCategory(entity: RawEntity): string {
 }
 
 async function fetchBusserz(path: string): Promise<unknown> {
-  const response = await fetch(`${BUSSERZ_API_BASE}/${path}`, {
-    headers: {
-      "x-bz-api-key": BUSSERZ_API_KEY,
-      "x-bz-space-id": BUSSERZ_SPACE_ID,
-    },
-    next: { revalidate: 300 },
-  });
+  try {
+    const response = await fetch(`${BUSSERZ_API_BASE}/${path}`, {
+      headers: {
+        "x-bz-api-key": BUSSERZ_API_KEY,
+        "x-bz-space-id": BUSSERZ_SPACE_ID,
+      },
+      next: { revalidate: 300 },
+    });
 
-  if (!response.ok) {
-    throw new Error(`Busserz API request failed for ${path} with ${response.status}`);
+    if (!response.ok) {
+      console.warn(`Busserz API request failed for ${path} with ${response.status}. Returning empty data.`);
+      return { items: [] };
+    }
+
+    return response.json();
+  } catch (error) {
+    console.warn(`Busserz API fetch error for ${path}:`, error instanceof Error ? error.message : String(error));
+    return { items: [] };
   }
-
-  return response.json();
 }
 
 export async function getBusserzProducts(): Promise<Product[]> {
