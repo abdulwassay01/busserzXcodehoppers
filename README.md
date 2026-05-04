@@ -14,8 +14,6 @@ The products page uses an async helper in `src/lib/products.ts`.
 
 - Menu source: Busserz API `/v2/menus`
 - Product source: Busserz API `/v2/products`
-- Runtime freshness target: 30 seconds for Busserz API reads during development or runtime hosting
-- GitHub Pages note: this project uses static export, so deployed product changes only appear after a new build/deploy
 
 ## Busserz API Configuration
 
@@ -56,9 +54,7 @@ This project is configured for static export (`out/`) to support GitHub Pages.
 1. Push this project to a GitHub repository.
 2. Ensure your default deployment branch is `main`.
 3. In GitHub repo settings, enable Pages with "GitHub Actions" as source.
-4. Add `BUSSERZ_API_KEY` and `BUSSERZ_SPACE_ID` to GitHub Actions secrets so the build can fetch live Busserz data.
-5. Push to `main`; workflow at `.github/workflows/deploy.yml` deploys automatically.
-6. After updating products in Busserz, trigger a new deploy with a push or the `workflow_dispatch` action to publish the refreshed static site.
+4. Push to `main`; workflow at `.github/workflows/deploy.yml` deploys automatically.
 
 ## Optional Vercel Deployment
 
