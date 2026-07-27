@@ -4,8 +4,8 @@ import { useState, useEffect, useCallback } from "react";
 import { getClientCache, clearAllClientCache, removeClientCache } from "@/lib/client-cache";
 
 interface LocalCacheInfo {
-  products: { timestamp: number; ttlRemainingSeconds: number; count: number } | null;
-  menu: { timestamp: number; ttlRemainingSeconds: number; count: number } | null;
+  products: { timestamp: number; count: number } | null;
+  menu: { timestamp: number; count: number } | null;
 }
 
 export function CacheStatusControl({
@@ -27,14 +27,12 @@ export function CacheStatusControl({
       products: productsCached
         ? {
             timestamp: productsCached.timestamp,
-            ttlRemainingSeconds: productsCached.ttlRemainingSeconds,
             count: Array.isArray(productsCached.data) ? productsCached.data.length : 0,
           }
         : null,
       menu: menuCached
         ? {
             timestamp: menuCached.timestamp,
-            ttlRemainingSeconds: menuCached.ttlRemainingSeconds,
             count: Array.isArray(menuCached.data) ? menuCached.data.length : 0,
           }
         : null,
@@ -43,12 +41,10 @@ export function CacheStatusControl({
 
   useEffect(() => {
     checkCache();
-    const interval = setInterval(checkCache, 1000);
-    return () => clearInterval(interval);
   }, [checkCache]);
 
   const activeKeyInfo = cacheKey === "menu" ? cacheInfo.menu : cacheInfo.products;
-  const isCached = !!activeKeyInfo && activeKeyInfo.ttlRemainingSeconds > 0;
+  const isCached = !!activeKeyInfo;
 
   const handleClearCache = () => {
     if (cacheKey === "products") {
@@ -59,7 +55,7 @@ export function CacheStatusControl({
       clearAllClientCache();
     }
     checkCache();
-    setMessage("🗑️ Cache cleared! Reloading fresh data...");
+    setMessage("🗑️ Cache deleted! Reloading & calling API...");
     setTimeout(() => {
       setMessage(null);
       if (onRefresh) {
@@ -73,17 +69,11 @@ export function CacheStatusControl({
   const handleClearAll = () => {
     clearAllClientCache();
     checkCache();
-    setMessage("🧹 All cached data cleared!");
+    setMessage("🧹 All browser caches deleted!");
     setTimeout(() => {
       setMessage(null);
       window.location.reload();
     }, 800);
-  };
-
-  const formatSeconds = (sec: number) => {
-    const m = Math.floor(sec / 60);
-    const s = sec % 60;
-    return m > 0 ? `${m}m ${s}s` : `${s}s`;
   };
 
   return (
@@ -96,11 +86,10 @@ export function CacheStatusControl({
           <span className="cache-text">
             {isCached ? (
               <>
-                Serving <strong>{activeKeyInfo.count}</strong> cached items · Auto-deletes in{" "}
-                <strong>{formatSeconds(activeKeyInfo.ttlRemainingSeconds)}</strong>
+                Serving <strong>{activeKeyInfo.count}</strong> cached items from browser storage. (<strong>0 API calls on reload</strong>)
               </>
             ) : (
-              "No active local cache. Next load will call Busserz API & cache the result."
+              "No local cache found. Calling API and storing data for future reloads."
             )}
           </span>
         </div>
@@ -111,14 +100,14 @@ export function CacheStatusControl({
             className="cache-btn cache-btn-ghost"
             onClick={() => setIsExpanded(!isExpanded)}
           >
-            {isExpanded ? "Hide Stats ▲" : "Cache Stats ▼"}
+            {isExpanded ? "Hide Stats ▲" : "Cache Info ▼"}
           </button>
           <button
             type="button"
             className="cache-btn cache-btn-primary"
             onClick={handleClearCache}
           >
-            🔄 Force Re-fetch
+            🔄 Delete Cache & Re-fetch
           </button>
         </div>
       </div>
@@ -129,42 +118,42 @@ export function CacheStatusControl({
         <div className="cache-details-panel">
           <div className="cache-stats-grid">
             <div className="stat-card">
-              <span className="stat-value">{cacheInfo.products ? "Active" : "Empty"}</span>
+              <span className="stat-value">{cacheInfo.products ? "Active" : "Deleted"}</span>
               <span className="stat-label">Products Cache</span>
             </div>
             <div className="stat-card">
-              <span className="stat-value">{cacheInfo.menu ? "Active" : "Empty"}</span>
+              <span className="stat-value">{cacheInfo.menu ? "Active" : "Deleted"}</span>
               <span className="stat-label">Menu Cache</span>
             </div>
             <div className="stat-card">
-              <span className="stat-value">5 min</span>
-              <span className="stat-label">Auto-Expire TTL</span>
+              <span className="stat-value">Persistent</span>
+              <span className="stat-label">Auto-Expire Policy</span>
             </div>
           </div>
 
           <div className="cache-keys-table">
-            <h4>Cache Status Overview</h4>
+            <h4>Cache Storage Overview</h4>
             <ul>
               <li>
                 <span className="key-name">📦 Products Cache</span>
                 {cacheInfo.products ? (
                   <span className="key-ttl">
-                    Cached ({cacheInfo.products.count} items) · Expires in{" "}
-                    <strong>{formatSeconds(cacheInfo.products.ttlRemainingSeconds)}</strong>
+                    Cached ({cacheInfo.products.count} items) · Saved at{" "}
+                    <strong>{new Date(cacheInfo.products.timestamp).toLocaleTimeString()}</strong>
                   </span>
                 ) : (
-                  <span className="muted">No cached data</span>
+                  <span className="muted">No cached data (Will fetch API)</span>
                 )}
               </li>
               <li>
                 <span className="key-name">🍽️ Menus Cache</span>
                 {cacheInfo.menu ? (
                   <span className="key-ttl">
-                    Cached ({cacheInfo.menu.count} items) · Expires in{" "}
-                    <strong>{formatSeconds(cacheInfo.menu.ttlRemainingSeconds)}</strong>
+                    Cached ({cacheInfo.menu.count} items) · Saved at{" "}
+                    <strong>{new Date(cacheInfo.menu.timestamp).toLocaleTimeString()}</strong>
                   </span>
                 ) : (
-                  <span className="muted">No cached data</span>
+                  <span className="muted">No cached data (Will fetch API)</span>
                 )}
               </li>
             </ul>
@@ -176,7 +165,7 @@ export function CacheStatusControl({
               className="cache-btn cache-btn-danger"
               onClick={handleClearAll}
             >
-              🧹 Clear All Browser Caches
+              🧹 Delete All Browser Caches
             </button>
           </div>
         </div>

@@ -6,28 +6,26 @@ import type { MenuSection } from "@/types/menu";
 import { getClientCache, setClientCache, removeClientCache } from "@/lib/client-cache";
 import { CacheStatusControl } from "@/components/cache-status";
 
-const CLIENT_TTL_MS = 60 * 60 * 1000; // 1 hour client cache TTL (saves API costs)
-
 export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }) {
   const [menus, setMenus] = useState<MenuSection[]>(initialMenus);
   const [source, setSource] = useState<"client_cache" | "static_initial">("static_initial");
   const [updatedAt, setUpdatedAt] = useState<string>("");
 
   useEffect(() => {
-    // 1. Check if we have valid non-expired cached menu data in localStorage
+    // 1. Check if we have cached menu data in browser localStorage
     const cached = getClientCache<MenuSection[]>("menus");
     if (cached && Array.isArray(cached.data) && cached.data.length > 0) {
       setMenus(cached.data);
       setSource("client_cache");
       setUpdatedAt(new Date(cached.timestamp).toLocaleTimeString());
-      console.log("⚡ [CLIENT CACHE HIT] Loaded menu from localStorage. 0 API hits made!");
+      console.log("⚡ [PERSISTENT CACHE HIT] Loaded menu from localStorage. 0 API calls made!");
     } else {
-      // 2. If no client cache exists, save initial static build payload to localStorage to prevent future API calls on reload
+      // 2. If cache is naturally missing/deleted, save initial data to localStorage to use on future reloads
       if (initialMenus && initialMenus.length > 0) {
-        setClientCache("menus", initialMenus, CLIENT_TTL_MS);
+        setClientCache("menus", initialMenus);
         setSource("static_initial");
         setUpdatedAt(new Date().toLocaleTimeString());
-        console.log("💾 [CLIENT CACHE STORED] Saved initial menu data to localStorage.");
+        console.log("💾 [CACHE INITIALIZED] Saved menu data to localStorage.");
       }
     }
   }, [initialMenus]);
@@ -46,11 +44,11 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
           Data Mode:{" "}
           <strong>
             {source === "client_cache"
-              ? "⚡ PERSISTENT LOCALSTORAGE CACHE (Zero API Calls on Reload)"
+              ? "⚡ PERSISTENT BROWSER CACHE (Zero API Calls on Reload)"
               : "💾 CACHED INITIAL DATA"}
           </strong>
         </span>
-        {updatedAt ? <span> · Cached at: {updatedAt}</span> : null}
+        {updatedAt ? <span> · Saved at: {updatedAt}</span> : null}
       </div>
 
       <div className="container-wide menu-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>

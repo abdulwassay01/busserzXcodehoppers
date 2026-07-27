@@ -6,28 +6,26 @@ import type { Product } from "@/types/product";
 import { getClientCache, setClientCache, removeClientCache } from "@/lib/client-cache";
 import { CacheStatusControl } from "@/components/cache-status";
 
-const CLIENT_TTL_MS = 60 * 60 * 1000; // 1 hour client cache TTL (saves API costs)
-
 export function ClientProductsView({ initialProducts }: { initialProducts: Product[] }) {
   const [products, setProducts] = useState<Product[]>(initialProducts);
   const [source, setSource] = useState<"client_cache" | "static_initial">("static_initial");
   const [updatedAt, setUpdatedAt] = useState<string>("");
 
   useEffect(() => {
-    // 1. Check if we have valid non-expired cached products data in localStorage
+    // 1. Check if we have cached products data in browser localStorage
     const cached = getClientCache<Product[]>("products");
     if (cached && Array.isArray(cached.data) && cached.data.length > 0) {
       setProducts(cached.data);
       setSource("client_cache");
       setUpdatedAt(new Date(cached.timestamp).toLocaleTimeString());
-      console.log("⚡ [CLIENT CACHE HIT] Loaded products from localStorage. 0 API hits made!");
+      console.log("⚡ [PERSISTENT CACHE HIT] Loaded products from localStorage. 0 API calls made!");
     } else {
-      // 2. If no client cache exists, save initial static build payload to localStorage to prevent future API calls on reload
+      // 2. If cache is naturally missing/deleted, save initial data to localStorage to use on future reloads
       if (initialProducts && initialProducts.length > 0) {
-        setClientCache("products", initialProducts, CLIENT_TTL_MS);
+        setClientCache("products", initialProducts);
         setSource("static_initial");
         setUpdatedAt(new Date().toLocaleTimeString());
-        console.log("💾 [CLIENT CACHE STORED] Saved initial products data to localStorage.");
+        console.log("💾 [CACHE INITIALIZED] Saved products data to localStorage.");
       }
     }
   }, [initialProducts]);
@@ -46,11 +44,11 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
           Data Mode:{" "}
           <strong>
             {source === "client_cache"
-              ? "⚡ PERSISTENT LOCALSTORAGE CACHE (Zero API Calls on Reload)"
+              ? "⚡ PERSISTENT BROWSER CACHE (Zero API Calls on Reload)"
               : "💾 CACHED INITIAL DATA"}
           </strong>
         </span>
-        {updatedAt ? <span> · Cached at: {updatedAt}</span> : null}
+        {updatedAt ? <span> · Saved at: {updatedAt}</span> : null}
       </div>
 
       <div className="container-wide products-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
