@@ -111,7 +111,7 @@ async function fetchBusserzDirectly(path: string): Promise<unknown> {
         "x-bz-api-key": BUSSERZ_API_KEY,
         "x-bz-space-id": BUSSERZ_SPACE_ID,
       },
-      cache: "no-store", // Disable Next.js default fetch cache to rely on our explicit serverCache
+      next: { revalidate: 3600 },
     });
 
     if (!response.ok) {
