@@ -1,20 +1,34 @@
 import Image from "next/image";
-import { getProducts } from "@/lib/products";
+import { getBusserzProductsWithMeta } from "@/lib/busserz";
+import { CacheStatusControl } from "@/components/cache-status";
 
 export default async function ProductsPage() {
-  const products = await getProducts();
+  const { data: products, source, timestamp, ttlRemainingSeconds } = await getBusserzProductsWithMeta();
+
+  const formattedTime = new Date(timestamp).toLocaleTimeString();
 
   return (
     <div className="page-shell">
       <div className="container-wide anim-rise">
         <h1 className="page-title">Products</h1>
         <p className="page-subtitle">
-          Live product data from your Busserz space, rendered through the shared
-          async data layer.
+          Live product data from your Busserz space, served via our auto-expiring cache layer.
         </p>
+
+        <CacheStatusControl cacheKey="products" />
+
+        <div className="cache-info-banner">
+          <span>
+            Server Cache Status: <strong>{source === "cache" ? "⚡ CACHE (No API Call Made)" : "🌐 FRESH BUSSERZ API"}</strong>
+          </span>
+          <span> · Updated at: {formattedTime}</span>
+          {source === "cache" ? (
+            <span> · Auto-deletes in <strong>{ttlRemainingSeconds}s</strong></span>
+          ) : null}
+        </div>
       </div>
 
-      <div className="container-wide products-grid anim-rise-delay">
+      <div className="container-wide products-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
         {products.map((product) => (
           <article key={product.id} className="product-card">
             {product.imageUrl ? (

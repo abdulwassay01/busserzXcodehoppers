@@ -1,20 +1,34 @@
 import Image from "next/image";
-import { getBusserzMenus } from "@/lib/busserz";
+import { getBusserzMenusWithMeta } from "@/lib/busserz";
+import { CacheStatusControl } from "@/components/cache-status";
 
 export default async function MenuPage() {
-  const menuSections = await getBusserzMenus();
+  const { data: menuSections, source, timestamp, ttlRemainingSeconds } = await getBusserzMenusWithMeta();
+
+  const formattedTime = new Date(timestamp).toLocaleTimeString();
 
   return (
     <div className="page-shell">
       <div className="container-wide anim-rise">
         <h1 className="page-title">Our Menus</h1>
         <p className="page-subtitle">
-          Live menu data from your Busserz space with categories and product
-          listings.
+          Live menu data from your Busserz space with categories and product listings, served via our auto-expiring cache layer.
         </p>
+
+        <CacheStatusControl cacheKey="menu" />
+
+        <div className="cache-info-banner">
+          <span>
+            Server Cache Status: <strong>{source === "cache" ? "⚡ CACHE (No API Call Made)" : "🌐 FRESH BUSSERZ API"}</strong>
+          </span>
+          <span> · Updated at: {formattedTime}</span>
+          {source === "cache" ? (
+            <span> · Auto-deletes in <strong>{ttlRemainingSeconds}s</strong></span>
+          ) : null}
+        </div>
       </div>
 
-      <div className="container-wide menu-grid anim-rise-delay">
+      <div className="container-wide menu-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
         {menuSections.map((section) => (
           <section className="panel" key={section.title}>
             {section.imageUrl ? (

@@ -1,5 +1,6 @@
 import type { MenuSection } from "@/types/menu";
 import type { Product } from "@/types/product";
+import { serverCache } from "@/lib/cache";
 
 type RawEntity = Record<string, unknown>;
 
@@ -102,18 +103,19 @@ function resolveImageUrl(entity: RawEntity): string | undefined {
   return typeof url === "string" ? url : undefined;
 }
 
-async function fetchBusserz(path: string): Promise<unknown> {
+async function fetchBusserzDirectly(path: string): Promise<unknown> {
+  console.log(`[API FETCH] Fetching fresh data from Busserz API: /${path}`);
   try {
     const response = await fetch(`${BUSSERZ_API_BASE}/${path}`, {
       headers: {
         "x-bz-api-key": BUSSERZ_API_KEY,
         "x-bz-space-id": BUSSERZ_SPACE_ID,
       },
-      next: { revalidate: 300 },
+      cache: "no-store", // Disable Next.js default fetch cache to rely on our explicit serverCache
     });
 
     if (!response.ok) {
-      console.warn(`Busserz API request failed for ${path} with ${response.status}. Returning empty data.`);
+      console.warn(`Busserz API request failed for ${path} with status ${response.status}. Returning empty data.`);
       return { items: [] };
     }
 
@@ -124,59 +126,109 @@ async function fetchBusserz(path: string): Promise<unknown> {
   }
 }
 
-export async function getBusserzProducts(): Promise<Product[]> {
-  const raw = await fetchBusserz("products");
-  const payload = (raw ?? {}) as { items?: unknown[] };
-  const items = Array.isArray(payload.items) ? payload.items : [];
-
-  return items
-    .filter((item): item is RawEntity => !!item && typeof item === "object")
-    .map((item) => {
-      const rawPrice = item.price;
-      const price = typeof rawPrice === "number" ? rawPrice : Number(rawPrice ?? 0);
-
-      return {
-        id: String(item.id ?? crypto.randomUUID()),
-        name: resolveName(item),
-        description: resolveDescription(item) || "No description available.",
-        price: Number.isFinite(price) ? price : 0,
-        category: resolveCategory(item),
-        imageUrl: resolveImageUrl(item),
-      } satisfies Product;
-    });
+export interface FetchResultWithMeta<T> {
+  data: T;
+  source: "cache" | "api";
+  timestamp: number;
+  expiresAt: number;
+  ttlRemainingSeconds: number;
 }
 
-export async function getBusserzMenus(): Promise<MenuSection[]> {
-  const raw = await fetchBusserz("menus");
-  const payload = (raw ?? {}) as { items?: unknown[] };
-  const items = Array.isArray(payload.items) ? payload.items : [];
+export async function getBusserzProductsWithMeta(options?: {
+  forceRefresh?: boolean;
+  ttlMs?: number;
+}): Promise<FetchResultWithMeta<Product[]>> {
+  const cacheKey = "busserz_products";
+  if (options?.forceRefresh) {
+    serverCache.delete(cacheKey);
+  }
 
-  return items
-    .filter((item): item is RawEntity => !!item && typeof item === "object")
-    .map((menu) => {
-      const products = Array.isArray(menu.products) ? menu.products : [];
+  const res = await serverCache.getOrFetch<Product[]>(
+    cacheKey,
+    async () => {
+      const raw = await fetchBusserzDirectly("products");
+      const payload = (raw ?? {}) as { items?: unknown[] };
+      const items = Array.isArray(payload.items) ? payload.items : [];
 
-      const normalizedProducts = products
+      return items
         .filter((item): item is RawEntity => !!item && typeof item === "object")
-        .map((product) => {
-          const rawPrice = product.price;
+        .map((item) => {
+          const rawPrice = item.price;
           const price = typeof rawPrice === "number" ? rawPrice : Number(rawPrice ?? 0);
 
           return {
-            id: String(product.id ?? crypto.randomUUID()),
-            name: resolveName(product),
-            details: resolveDescription(product) || "Chef recommendation",
+            id: String(item.id ?? crypto.randomUUID()),
+            name: resolveName(item),
+            description: resolveDescription(item) || "No description available.",
             price: Number.isFinite(price) ? price : 0,
-            imageUrl: resolveImageUrl(product),
-          };
+            category: resolveCategory(item),
+            imageUrl: resolveImageUrl(item),
+          } satisfies Product;
         });
+    },
+    options?.ttlMs
+  );
 
-      return {
-        id: String(menu.id ?? crypto.randomUUID()),
-        title: resolveName(menu),
-        description: resolveDescription(menu),
-        imageUrl: resolveImageUrl(menu),
-        items: normalizedProducts,
-      } satisfies MenuSection;
-    });
+  return res;
+}
+
+export async function getBusserzProducts(): Promise<Product[]> {
+  const res = await getBusserzProductsWithMeta();
+  return res.data;
+}
+
+export async function getBusserzMenusWithMeta(options?: {
+  forceRefresh?: boolean;
+  ttlMs?: number;
+}): Promise<FetchResultWithMeta<MenuSection[]>> {
+  const cacheKey = "busserz_menus";
+  if (options?.forceRefresh) {
+    serverCache.delete(cacheKey);
+  }
+
+  const res = await serverCache.getOrFetch<MenuSection[]>(
+    cacheKey,
+    async () => {
+      const raw = await fetchBusserzDirectly("menus");
+      const payload = (raw ?? {}) as { items?: unknown[] };
+      const items = Array.isArray(payload.items) ? payload.items : [];
+
+      return items
+        .filter((item): item is RawEntity => !!item && typeof item === "object")
+        .map((menu) => {
+          const products = Array.isArray(menu.products) ? menu.products : [];
+
+          const normalizedProducts = products
+            .filter((item): item is RawEntity => !!item && typeof item === "object")
+            .map((product) => {
+              const rawPrice = product.price;
+              const price = typeof rawPrice === "number" ? rawPrice : Number(rawPrice ?? 0);
+
+              return {
+                id: String(product.id ?? crypto.randomUUID()),
+                name: resolveName(product),
+                details: resolveDescription(product) || "Chef recommendation",
+                price: Number.isFinite(price) ? price : 0,
+                imageUrl: resolveImageUrl(product),
+              };
+            });
+
+          return {
+            id: String(menu.id ?? crypto.randomUUID()),
+            title: resolveName(menu),
+            description: resolveDescription(menu),
+            imageUrl: resolveImageUrl(menu),
+            items: normalizedProducts,
+          } satisfies MenuSection;
+        });
+    },
+    options?.ttlMs
+  );
+
+  return res;
+}
+
+export async function getBusserzMenus(): Promise<MenuSection[]> {
+  const res = await getBusserzMenusWithMeta();
+  return res.data;
 }
