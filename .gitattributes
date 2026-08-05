@@ -1,4 +1,0 @@
-* text=auto eol=lf
-
-*.ts linguist-language=TypeScript
-*.tsx linguist-language=TypeScript

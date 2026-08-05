@@ -1,0 +1,29 @@
+{
+  "data": [
+    {
+      "id": "0930ba08-c149-49d3-a0e3-22b66200fcd8",
+      "title": "Breakfast",
+      "description": "healthy and delicious breakfast",
+      "imageUrl": "https://assets.busserz.com/pk00001002/5f14179c-27c3-42ec-92d1-43001aed44f4",
+      "items": [
+        {
+          "id": "0cd792e6-af65-42d5-b5b7-b7e0d514e571",
+          "name": "Sandwich",
+          "details": "Sandwich",
+          "price": 12,
+          "imageUrl": "https://assets.busserz.com/pk00001002/46136cd8-1805-4720-ae26-27932030a6d0"
+        },
+        {
+          "id": "111c32d3-431e-4ca3-a465-3f2acafab799",
+          "name": "Orange Juice",
+          "details": "Chef recommendation",
+          "price": 12,
+          "imageUrl": "https://assets.busserz.com/pk00001002/5ff67362-0b70-4518-9c36-c383ede1a00a"
+        }
+      ]
+    }
+  ],
+  "savedAt": "2026-08-05T07:04:34.687Z",
+  "apiKey": "Y2tqOjpuAUmjo9Gqsayc1o1KKVSfkXsq",
+  "spaceId": "PK00001002"
+}
