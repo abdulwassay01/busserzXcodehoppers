@@ -70,64 +70,62 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
   }, [initialMenus]);
 
   return (
-    <>
-      <div className="container-wide menu-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
-        {menus.map((section, sIdx) => {
-          const sTitle = safeString(section.title, "Menu");
-          const sDesc = safeString(section.description, "");
-          const items = Array.isArray(section.items) ? section.items : [];
+    <div className="menu-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
+      {menus.map((section, sIdx) => {
+        const sTitle = safeString(section.title, "Menu Category");
+        const sDesc = safeString(section.description, "");
+        const items = Array.isArray(section.items) ? section.items : [];
 
-          return (
-            <section className="panel" key={section.id || sIdx}>
-              {section.imageUrl ? (
-                <div className="panel-image">
-                  <Image
-                    src={section.imageUrl}
-                    alt={sTitle}
-                    width={400}
-                    height={250}
-                    unoptimized
-                  />
-                </div>
-              ) : (
-                <div className="panel-image no-image">No image available</div>
-              )}
-              <h2 className="section-title">{sTitle}</h2>
-              {sDesc ? <p className="muted">{sDesc}</p> : null}
-              <ul className="menu-list">
-                {items.map((item, iIdx) => {
-                  const iName = safeString(item.name, "Item");
-                  const iDetails = safeString(item.details, "");
-                  const iPrice = typeof item.price === "number" && Number.isFinite(item.price) ? item.price : Number(item.price ?? 0);
+        return (
+          <section className="panel" key={section.id || sIdx}>
+            {section.imageUrl ? (
+              <div className="panel-image">
+                <Image
+                  src={section.imageUrl}
+                  alt={sTitle}
+                  width={400}
+                  height={250}
+                  unoptimized
+                />
+              </div>
+            ) : (
+              <div className="panel-image no-image">No image available</div>
+            )}
+            <h2 className="section-title">{sTitle}</h2>
+            {sDesc ? <p className="muted">{sDesc}</p> : null}
+            <ul className="menu-list">
+              {items.map((item, iIdx) => {
+                const iName = safeString(item.name, "Item");
+                const iDetails = safeString(item.details, "");
+                const iPrice = typeof item.price === "number" && Number.isFinite(item.price) ? item.price : Number(item.price ?? 0);
 
-                  return (
-                    <li className="menu-item" key={item.id || iIdx}>
-                      {item.imageUrl ? (
-                        <div className="menu-item-image">
-                          <Image
-                            src={item.imageUrl}
-                            alt={iName}
-                            width={80}
-                            height={60}
-                            unoptimized
-                          />
-                        </div>
-                      ) : (
-                        <div className="menu-item-image no-image">No image</div>
-                      )}
-                      <div className="menu-item-content">
-                        <strong>{iName}</strong>
-                        {iDetails ? <p className="muted">{iDetails}</p> : null}
+                return (
+                  <li className="menu-item" key={item.id || iIdx}>
+                    {item.imageUrl ? (
+                      <div className="menu-item-image">
+                        <Image
+                          src={item.imageUrl}
+                          alt={iName}
+                          width={80}
+                          height={60}
+                          unoptimized
+                        />
                       </div>
-                      <strong>${(Number.isFinite(iPrice) ? iPrice : 0).toFixed(2)}</strong>
-                    </li>
-                  );
-                })}
-              </ul>
-            </section>
-          );
-        })}
-      </div>
-    </>
+                    ) : (
+                      <div className="menu-item-image no-image">No image</div>
+                    )}
+                    <div className="menu-item-content">
+                      <strong>{iName}</strong>
+                      {iDetails ? <p className="muted">{iDetails}</p> : null}
+                    </div>
+                    <span className="menu-item-price">${(Number.isFinite(iPrice) ? iPrice : 0).toFixed(2)}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        );
+      })}
+    </div>
   );
 }

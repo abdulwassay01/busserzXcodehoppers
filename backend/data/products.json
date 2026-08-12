@@ -1,23 +1,4620 @@
 {
-  "data": [
-    {
-      "id": "111c32d3-431e-4ca3-a465-3f2acafab799",
-      "name": "Orange Juice",
-      "description": "No description available.",
-      "price": 12,
-      "category": "General",
-      "imageUrl": "https://assets.busserz.com/pk00001002/5ff67362-0b70-4518-9c36-c383ede1a00a"
-    },
-    {
-      "id": "0cd792e6-af65-42d5-b5b7-b7e0d514e571",
-      "name": "Sandwich",
-      "description": "Sandwich",
-      "price": 12,
-      "category": "Breakfast",
-      "imageUrl": "https://assets.busserz.com/pk00001002/46136cd8-1805-4720-ae26-27932030a6d0"
-    }
-  ],
-  "savedAt": "2026-08-05T07:04:18.707Z",
-  "apiKey": "Y2tqOjpuAUmjo9Gqsayc1o1KKVSfkXsq",
-  "spaceId": "PK00001002"
+  "products": {
+    "data": [
+      {
+        "name": {
+          "sv": "Amerikansk våffla hjortron"
+        },
+        "description": {
+          "short": {
+            "sv": "Hjortronsylt, vaniljglass & grädde\n\n"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-hjortron",
+        "assets": [
+          {
+            "name": "Hjortron",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/5837f8d6-9f03-463d-9661-4f0add58d9b5",
+            "alt": "",
+            "metadata": {},
+            "created": "2025-10-07T15:18:59.806381502Z",
+            "updated": "2025-10-07T15:19:44.497521164Z",
+            "version": 2,
+            "schema": 2,
+            "type": "IMAGE",
+            "id": "5837f8d6-9f03-463d-9661-4f0add58d9b5"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Hjortron"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Hjortron",
+          "short_description": "Hjortronsylt Vaniljglass Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.013436543Z",
+        "updated": "2025-11-11T18:22:51.600711533Z",
+        "version": 8,
+        "deleted": false,
+        "product_id": "22182acf-3480-4008-a228-e46dc5acabf0"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffla black & white"
+        },
+        "description": {
+          "short": {
+            "sv": "Choklad, vaniljglass, grädde & nutella"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-black-white",
+        "assets": [
+          {
+            "name": "black white",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/085f25d3-46ef-496b-bc36-3eb874c1da7b",
+            "alt": "",
+            "metadata": {},
+            "created": "2025-10-07T15:24:26.216159622Z",
+            "updated": "2025-10-07T15:30:19.965681889Z",
+            "version": 3,
+            "schema": 2,
+            "type": "IMAGE",
+            "id": "085f25d3-46ef-496b-bc36-3eb874c1da7b"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Black & White"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Black White",
+          "short_description": "Choklad Vaniljglass Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.026380234Z",
+        "updated": "2025-11-11T18:21:54.652812709Z",
+        "version": 10,
+        "deleted": false,
+        "product_id": "32356e70-193f-41b8-917a-d8549310f6d2"
+      },
+      {
+        "name": {
+          "sv": "Husets kycklingsallad"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "husets-kycklingsallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Husets Kycklingsallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.085704785Z",
+        "updated": "2025-11-11T16:42:02.970959527Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "1ce38dff-7435-4d24-8f9a-91adbe69f0ab"
+      },
+      {
+        "name": {
+          "sv": "Dubai Swedish Pancakes"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 119,
+        "slug": "dubai-swedish-pancakes",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "dubai"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Dubai Swedish Pancakes",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.15211409Z",
+        "updated": "2025-08-17T09:08:49.15211409Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "63f321ba-bd65-4ff1-9e24-48307b7a8e6f"
+      },
+      {
+        "name": {
+          "sv": "Lax & spenatpaj"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "lax--spenatpaj",
+        "assets": [
+          {
+            "name": "Lax & Spenatpaj",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mat-pajer"
+            ],
+            "url": "https://assets.busserz.com/se00001001/d809b946-b344-4546-a367-5f73ce9a6f34",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:18:14.822668104Z",
+            "updated": "2025-10-07T16:18:14.822668104Z",
+            "version": 1,
+            "schema": 2,
+            "id": "d809b946-b344-4546-a367-5f73ce9a6f34"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mat-paj"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Lax & Spenatpaj",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.163066417Z",
+        "updated": "2025-11-11T15:34:59.91234216Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "efbb4658-7786-4409-8525-8e625757cfe6"
+      },
+      {
+        "name": {
+          "sv": "Ost & skinkpaj"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "ost--skinkapaj",
+        "assets": [
+          {
+            "name": "Ost & Skinkpaj",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mat-pajer"
+            ],
+            "url": "https://assets.busserz.com/se00001001/aa299711-257d-4b7c-b5c9-8effbe120d52",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:17:00.280498446Z",
+            "updated": "2025-10-07T16:17:00.280498446Z",
+            "version": 1,
+            "schema": 2,
+            "id": "aa299711-257d-4b7c-b5c9-8effbe120d52"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mat-paj"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Ost & Skinkapaj",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.174023068Z",
+        "updated": "2025-11-11T15:35:12.900801625Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "7621fae8-9b24-4e08-a2bd-be8a618e3833"
+      },
+      {
+        "name": {
+          "sv": "Fetaost & spenatpaj"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "feta--spenatpaj",
+        "assets": [
+          {
+            "name": "Fetaost & Spenatpaj",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mat-pajer"
+            ],
+            "url": "https://assets.busserz.com/se00001001/aed1528d-5481-4b83-8b35-e57d17e8e4a2",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:17:57.648030768Z",
+            "updated": "2025-10-07T16:17:57.648030768Z",
+            "version": 1,
+            "schema": 2,
+            "id": "aed1528d-5481-4b83-8b35-e57d17e8e4a2"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mat-paj"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Feta & Spenatpaj",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.179413521Z",
+        "updated": "2025-11-11T15:34:36.794760231Z",
+        "version": 9,
+        "deleted": false,
+        "product_id": "3fc533d6-5f21-44fd-9a73-baf32b75e8e6"
+      },
+      {
+        "name": {
+          "sv": "Bakad potatis skagenröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "bakad-potaits-skagenrora",
+        "assets": [
+          {
+            "name": "Skagen",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bakad-potatis"
+            ],
+            "url": "https://assets.busserz.com/se00001001/48b85c8d-2c7f-4804-bc62-a66bdd2a70b7",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-11-12T14:40:25.304051268Z",
+            "updated": "2025-11-12T14:40:25.304051268Z",
+            "version": 1,
+            "schema": 2,
+            "id": "48b85c8d-2c7f-4804-bc62-a66bdd2a70b7"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "bakad-potatis"
+        ],
+        "metadata": {
+          "displayName": "Skagenröra"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bakad Potaits Skagenröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.195897369Z",
+        "updated": "2025-11-12T14:42:01.176429485Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "bb861f9f-2d4f-4430-b5eb-b03977ca1e30"
+      },
+      {
+        "name": {
+          "sv": "Bakad potatis fetaoströra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "bakad-potaits-fetaostrora",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "bakad-potatis"
+        ],
+        "metadata": {
+          "displayName": "Fetaoströra"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bakad Potaits Fetaoströra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.201591015Z",
+        "updated": "2025-11-06T13:56:42.189454711Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "3b21ddb8-dc88-40f1-9b66-611c726f9cd7"
+      },
+      {
+        "name": {
+          "sv": "Bakad potatis räkor "
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras med gräddfil & löjrom"
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "bakad-potaits-graddfil-rakor--rom",
+        "assets": [
+          {
+            "name": "Räkor Rom Gräddfil",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bakad-potatis"
+            ],
+            "url": "https://assets.busserz.com/se00001001/8dd1e4b4-87ce-4f96-b69e-56a034c9468b",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-11-12T14:41:00.871049372Z",
+            "updated": "2025-11-12T14:41:00.871049372Z",
+            "version": 1,
+            "schema": 2,
+            "id": "8dd1e4b4-87ce-4f96-b69e-56a034c9468b"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "bakad-potatis"
+        ],
+        "metadata": {
+          "displayName": "Gräddfil Räkor & Rom"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bakad Potaits Gräddfil Räkor & Rom",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.207157911Z",
+        "updated": "2025-11-12T14:41:36.482549061Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "35d4c146-0110-4492-a963-5b39ff182dc9"
+      },
+      {
+        "name": {
+          "sv": "Galette chèvre & rödbetor"
+        },
+        "description": {
+          "short": {
+            "sv": "Smält ost, ruccola, toppas med honung & valnötter"
+          },
+          "full": {
+            "sv": "Denna galette är fylld med en krämig, syrlig Chèvre (getost) som smälter samman med söta, jordiga rödbetor och ruccola. Hela Galetten är toppad med honung och valnötter som ger en vacker aromatisk ton. Den är perfekt som en lyxig, mättande lunch eller en lättare middag och levererar en sofistikerad smakupplevelse i varje tugga."
+          }
+        },
+        "price": 129,
+        "slug": "galette-chevre--rodbetor",
+        "assets": [
+          {
+            "name": "Chevre Rödbetor",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "galette"
+            ],
+            "url": "https://assets.busserz.com/se00001001/50927f28-89db-4de0-bb84-7fe925c53eff",
+            "alt": "",
+            "metadata": {},
+            "created": "2025-10-07T15:48:58.463625489Z",
+            "updated": "2025-10-07T15:49:06.933858242Z",
+            "version": 2,
+            "schema": 2,
+            "type": "IMAGE",
+            "id": "50927f28-89db-4de0-bb84-7fe925c53eff"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "galett"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Galette Chevre & Rödbetor",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.236723279Z",
+        "updated": "2025-11-11T18:47:39.324703545Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "3dd66c44-08d7-45ce-9701-992bfaadbda4"
+      },
+      {
+        "name": {
+          "sv": "Minipannkakor frukt"
+        },
+        "description": {
+          "short": {
+            "sv": "Nutella, jordgubbar, banan\n"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "mini-pannkakor-frukt",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mini-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Pannkakor Frukt",
+          "short_description": "Nutella Jordgubbar Banan",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.946952942Z",
+        "updated": "2025-11-11T15:37:20.807408739Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "7c1376dc-7fc6-4804-8eee-ac8f10d62e9f"
+      },
+      {
+        "name": {
+          "sv": "Crêpe roll jordgubb"
+        },
+        "description": {
+          "short": {
+            "sv": "Innehåller jordgubbar jordgubbsglass nutellakräm jordgubbsås. Toppas med jordgubbssås & vit chokladsås"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "crepe-roll-jordgubb",
+        "assets": [
+          {
+            "name": "Jordgubb",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "crepe-rolls"
+            ],
+            "url": "https://assets.busserz.com/se00001001/365e8324-4dad-49d6-abad-8f873cf87084",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:35:07.87673704Z",
+            "updated": "2025-10-09T14:35:07.87673704Z",
+            "version": 1,
+            "schema": 2,
+            "id": "365e8324-4dad-49d6-abad-8f873cf87084"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepe-roll"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crépe Roll Jordgubb",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:50.007781247Z",
+        "updated": "2025-11-12T16:13:53.195745986Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "8c4493b1-2124-47df-a825-22093fdfb123"
+      },
+      {
+        "name": {
+          "sv": "Superbanan i Rosa"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": "denna banan är supergod"
+          }
+        },
+        "price": 159,
+        "slug": "superbanan-i-rosa",
+        "assets": [],
+        "tags": [],
+        "categories": [],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Superbanan i Rosa",
+          "short_description": "denna banan är supergod",
+          "preparation": ""
+        },
+        "created": "2025-09-12T16:15:15.469045911Z",
+        "updated": "2025-09-12T16:15:29.603545984Z",
+        "version": 3,
+        "deleted": true,
+        "product_id": "654b8b58-d128-4e7a-a749-d5d633eec76a"
+      },
+      {
+        "name": {
+          "sv": "Barn Köttbullar"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras med pasta eller mos"
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "barn-kottbullar",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "barn"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Barn Köttbullar",
+          "short_description": "Serveras med Pasta eller Mos",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.256944937Z",
+        "updated": "2025-11-06T13:41:24.214198941Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "807a09fa-31a3-4300-8c5f-62b4e2bc73ec"
+      },
+      {
+        "name": {
+          "sv": "Barn Chicken nuggets 5st"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "barn-chicken-nuggets-5st",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "barn"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Barn Chicken Nuggets 5st",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.27472452Z",
+        "updated": "2025-11-06T13:41:12.565193468Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "4061497c-ec9e-45ca-ab2a-50f0b7e78ad4"
+      },
+      {
+        "name": {
+          "sv": "Glass Lollipop"
+        },
+        "description": {
+          "short": {
+            "sv": "Glass, strössel, klubba"
+          },
+          "full": {}
+        },
+        "price": 44,
+        "slug": "glass-lollipop",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "glass"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Glass Lollipop",
+          "short_description": "Glass Strössel Klubba",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.280341707Z",
+        "updated": "2025-11-11T18:51:25.337586412Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "cf700c6b-0664-42c6-afbb-8dc32e339891"
+      },
+      {
+        "name": {
+          "sv": "Glass Mini Boba"
+        },
+        "description": {
+          "short": {
+            "sv": "Glass, Popping Boba strössel"
+          },
+          "full": {}
+        },
+        "price": 49,
+        "slug": "glass-mini-boba",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "glass"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Glass Mini Boba",
+          "short_description": "Glass Popping Boba Strössel",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.285852439Z",
+        "updated": "2025-11-11T18:55:10.33981197Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "be2c451c-55fb-43c4-ab32-1d6f3b28c092"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka kyckling & röd pesto"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-macka-kyckling--rod-pesto",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Macka Kyckling & Röd Pesto",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.321190566Z",
+        "updated": "2025-11-11T19:01:21.274446275Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "06d97bb4-cabd-4491-ae2b-806d04cd7ec1"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka lufttorkad skinka"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-macka-lufttorkad-skinka",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Macka Lufttorkad Skinka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.326571999Z",
+        "updated": "2025-11-11T19:03:03.052791199Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "fe6cce90-4995-4545-bf1d-3e2e0520a6bf"
+      },
+      {
+        "name": {
+          "sv": "Ost & skinkmacka"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 45,
+        "slug": "ost--skinkmacka",
+        "assets": [
+          {
+            "name": "OstSkinka",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mackor"
+            ],
+            "url": "https://assets.busserz.com/se00001001/3bf1a5f6-08ae-40ac-82d0-2e29fc1cb7c1",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T08:29:55.621771303Z",
+            "updated": "2025-10-09T08:29:55.621771303Z",
+            "version": 1,
+            "schema": 2,
+            "id": "3bf1a5f6-08ae-40ac-82d0-2e29fc1cb7c1"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Ost & Skinkmacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.348579064Z",
+        "updated": "2025-11-10T12:20:00.43091442Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "1eb61e84-b2de-4ea4-ab86-c587b9035a03"
+      },
+      {
+        "name": {
+          "sv": "Lyxig räkmacka"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "lyxig-rakmacka",
+        "assets": [
+          {
+            "name": "räkmacka",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "lyxiga-mackor"
+            ],
+            "url": "https://assets.busserz.com/se00001001/9af053df-d473-42fd-a1ae-c380212ec890",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T15:42:25.861174452Z",
+            "updated": "2025-10-07T15:42:25.861174452Z",
+            "version": 1,
+            "schema": 2,
+            "id": "9af053df-d473-42fd-a1ae-c380212ec890"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "lyx-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Lyxig Räkmacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.390456195Z",
+        "updated": "2025-11-10T12:09:41.840776556Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "204de68b-cb49-45d5-a8f1-36030daff7dc"
+      },
+      {
+        "name": {
+          "sv": "Skagenmacka"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 135,
+        "slug": "skagenmacka",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "lyx-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Skagenmacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.395127964Z",
+        "updated": "2025-09-21T16:19:20.395127964Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "566aa450-64fe-49ee-bd3e-0652e0f4452e"
+      },
+      {
+        "name": {
+          "sv": "Crêpe oreo"
+        },
+        "description": {
+          "short": {
+            "sv": "Oreokex, oreokräm, nutella & grädde"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "crepe-oreo",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crepé OREO",
+          "short_description": "Oreokex Oreokräm Nutella Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.405472659Z",
+        "updated": "2025-11-06T14:38:22.569878041Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "7628cea5-43b2-4ace-91bd-c71a5395ead5"
+      },
+      {
+        "name": {
+          "sv": "Crêpe family"
+        },
+        "description": {
+          "short": {
+            "sv": "Härlig mix av allt, såser, glass & frukt"
+          },
+          "full": {}
+        },
+        "price": 345,
+        "slug": "crepe-family",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crepé Family",
+          "short_description": "Mix av allt Såser Glass Frukt",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.429915316Z",
+        "updated": "2025-11-06T14:32:53.716284609Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "bfe241a1-5a56-4655-b162-42aef404b651"
+      },
+      {
+        "name": {
+          "sv": "American Pancake standard"
+        },
+        "description": {
+          "short": {
+            "sv": "Med amerikansk lönnsirap"
+          },
+          "full": {}
+        },
+        "price": 99,
+        "slug": "american-pancake-standard",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Standard",
+          "short_description": "Amerikansk Sirap",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.440064697Z",
+        "updated": "2025-11-06T14:15:13.19064536Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "c6ecb8c9-c690-4917-8909-6f7113811bcc"
+      },
+      {
+        "name": {
+          "sv": "American Pancake pannkakstorn"
+        },
+        "description": {
+          "short": {
+            "sv": "Med frukt, nutella & vit choklad"
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "american-pancake-pannkakstorn",
+        "assets": [
+          {
+            "name": "Pannkakstorn Ny",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-pancakes"
+            ],
+            "url": "https://assets.busserz.com/se00001001/cbe53235-0dd5-4876-9dc3-f5ca4069b06a",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:02:51.675802695Z",
+            "updated": "2025-10-09T14:02:51.675802695Z",
+            "version": 1,
+            "schema": 2,
+            "id": "cbe53235-0dd5-4876-9dc3-f5ca4069b06a"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Pannkakstorn",
+          "short_description": "Frukt Nutella Vit Choklad",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.450500262Z",
+        "updated": "2025-11-04T15:32:16.678531733Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "608a5c8d-85a2-4462-b938-e587208f9958"
+      },
+      {
+        "name": {
+          "sv": "American Pancake Lotus"
+        },
+        "description": {
+          "short": {
+            "sv": "Med Lotus Biscoff kex, lotuskräm & vaniljglass"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "american-pancake-lotus",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Lotus",
+          "short_description": "Lotuskex Lotuskräm Vaniljglass",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.466463372Z",
+        "updated": "2025-11-06T14:17:27.482065891Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "c38abcb7-e36f-4fcf-b61d-f10157df400e"
+      },
+      {
+        "name": {
+          "sv": "American Pancake rosa dröm"
+        },
+        "description": {
+          "short": {
+            "sv": "Med jordgubbssylt, blåbär & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "american-pancake-rosa-drom",
+        "assets": [
+          {
+            "name": "Rosa Dröm",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-pancakes"
+            ],
+            "url": "https://assets.busserz.com/se00001001/c8d3d5ee-7108-4b51-8210-9fe3ff38d986",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:03:22.538550566Z",
+            "updated": "2025-10-09T14:03:22.538550566Z",
+            "version": 1,
+            "schema": 2,
+            "id": "c8d3d5ee-7108-4b51-8210-9fe3ff38d986"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Rosa Dröm",
+          "short_description": "Jordgubbssylt Blåbär Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.471513364Z",
+        "updated": "2025-11-04T15:33:33.864992127Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "38ef4345-017d-4c55-9910-282614b69c4c"
+      },
+      {
+        "name": {
+          "sv": "Galette fetaost"
+        },
+        "description": {
+          "short": {
+            "sv": "Ruccola, toppas med valnötter & honung"
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "galette-med-ruccola-fetaost-valnotter-honung",
+        "assets": [
+          {
+            "name": "Ruccola Fetaost Valnötter Honung",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "galette"
+            ],
+            "url": "https://assets.busserz.com/se00001001/c29f43b8-4228-4e0a-bca6-4045a1a7746e",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T15:48:31.653266611Z",
+            "updated": "2025-10-07T15:48:31.653266611Z",
+            "version": 1,
+            "schema": 2,
+            "id": "c29f43b8-4228-4e0a-bca6-4045a1a7746e"
+          }
+        ],
+        "tags": [
+          "dagens",
+          "lunch"
+        ],
+        "categories": [
+          "galett"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Galette med Ruccola Fetaost Valnötter Honung",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-01T13:21:55.339011411Z",
+        "updated": "2025-11-11T20:05:58.678581122Z",
+        "version": 8,
+        "deleted": false,
+        "product_id": "41dc3f25-0217-4898-ae2a-6e086b14b82a"
+      },
+      {
+        "name": {
+          "sv": "Kladdkaka"
+        },
+        "description": {
+          "short": {
+            "sv": "Vår goda hemmagjorda kladdkaka"
+          },
+          "full": {}
+        },
+        "price": 49,
+        "slug": "kladdkaka",
+        "assets": [
+          {
+            "name": "Kladdkaka",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bakverk"
+            ],
+            "url": "https://assets.busserz.com/se00001001/dec8469d-6dc8-45fd-ac1c-cfd32e0f0142",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T12:50:48.900289567Z",
+            "updated": "2025-10-09T12:50:48.900289567Z",
+            "version": 1,
+            "schema": 2,
+            "id": "dec8469d-6dc8-45fd-ac1c-cfd32e0f0142"
+          }
+        ],
+        "tags": [],
+        "categories": [
+          "bakverk"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Kladdkaka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-09T12:45:29.621378547Z",
+        "updated": "2025-11-11T18:30:12.529886858Z",
+        "version": 10,
+        "deleted": false,
+        "product_id": "416e3180-71f1-4140-aa1b-be63009dad01"
+      },
+      {
+        "name": {
+          "sv": "Lax & avokadomacka"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "lax--avokadomacka",
+        "assets": [
+          {
+            "name": "Lax & Avokado",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "lyxiga-mackor"
+            ],
+            "url": "https://assets.busserz.com/se00001001/6a7f8159-f5ca-4b49-908b-08b9b58e5945",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T16:47:04.3731892Z",
+            "updated": "2025-10-09T16:47:04.3731892Z",
+            "version": 1,
+            "schema": 2,
+            "id": "6a7f8159-f5ca-4b49-908b-08b9b58e5945"
+          }
+        ],
+        "tags": [],
+        "categories": [
+          "lyx-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Lax & Avokadomacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-09T16:50:15.17590202Z",
+        "updated": "2025-11-10T12:09:55.500692802Z",
+        "version": 5,
+        "deleted": false,
+        "product_id": "fc8e2e76-d1f3-4b4f-a5cf-ac0f925defa2"
+      },
+      {
+        "name": {
+          "sv": "Bubbelvåffla Oreo",
+          "en": ""
+        },
+        "description": {
+          "short": {
+            "sv": "Oreokex, oreokräm, glass, grädde & nutella",
+            "en": ""
+          },
+          "full": {
+            "sv": "",
+            "en": ""
+          }
+        },
+        "price": 119,
+        "slug": "bubble-vaffla-oreo",
+        "assets": [
+          {
+            "name": "Oreo",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bubble-våffla"
+            ],
+            "url": "https://assets.busserz.com/se00001001/d6181ac5-b907-47eb-815c-3dcd7e88d2f7",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T15:02:29.869201465Z",
+            "updated": "2025-10-09T15:02:29.869201465Z",
+            "version": 1,
+            "schema": 2,
+            "id": "d6181ac5-b907-47eb-815c-3dcd7e88d2f7"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "bubble-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Oreo"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bubble Våffla Oreo",
+          "short_description": "Oreokex Oreokräm Glass Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.955605342Z",
+        "updated": "2025-11-06T14:10:01.463053275Z",
+        "version": 29,
+        "deleted": false,
+        "product_id": "71000992-145e-4d08-becf-6e375baa9aeb"
+      },
+      {
+        "name": {
+          "sv": "Bubbelvåffla unicorn",
+          "en": "Bubble Waffle Unicorn"
+        },
+        "description": {
+          "short": {
+            "sv": "Glass, vit choklad, grädde & nutella",
+            "en": ""
+          },
+          "full": {
+            "sv": "",
+            "en": ""
+          }
+        },
+        "price": 119,
+        "slug": "bubble-vaffla-unicorn",
+        "assets": [
+          {
+            "name": "Unicorn",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bubble-våffla"
+            ],
+            "url": "https://assets.busserz.com/se00001001/e432292e-40cf-4392-a63e-4e49ce22438e",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T15:02:48.122872081Z",
+            "updated": "2025-10-09T15:02:48.122872081Z",
+            "version": 1,
+            "schema": 2,
+            "id": "e432292e-40cf-4392-a63e-4e49ce22438e"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "bubble-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Unicorn"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bubble Våffla Unicorn",
+          "short_description": "Bubbelglass Vit Choklad Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.98762387Z",
+        "updated": "2025-11-06T14:12:18.419904593Z",
+        "version": 9,
+        "deleted": false,
+        "product_id": "04f41f2b-8ee2-495c-9e92-b73e507f332c"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk chokladvåffla"
+        },
+        "description": {
+          "short": {
+            "sv": "Chokladvåffla med hallonsorbet, grädde & nutella"
+          },
+          "full": {
+            "sv": "Amerikansk chokladvåffla är en läcker variant av den klassiska amerikanska våfflan, där kakaopulver har blandats in i smeten. Resultatet är en våffla med en rik, djup chokladsmak och samma härligt krispiga yta och mjuka inre. Denna våffla är en perfekt med tillbehör som glass, vispad grädde, färska bär eller extra chokladsås. En dröm för alla chokladälskare."
+          }
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-choklad",
+        "assets": [
+          {
+            "name": "choklad",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/498dbe09-22b6-44df-b44d-a426a09db475",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T15:25:51.749357144Z",
+            "updated": "2025-10-07T15:25:51.749357144Z",
+            "version": 1,
+            "schema": 2,
+            "id": "498dbe09-22b6-44df-b44d-a426a09db475"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "display": "Choklad",
+          "displayName": "Choklad"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Choklad",
+          "short_description": "Chokladvåffla Hallonsorbet Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.994024508Z",
+        "updated": "2025-11-04T15:40:57.475080305Z",
+        "version": 12,
+        "deleted": false,
+        "product_id": "f223ecb7-1695-4580-9832-d97e9a69f0d7"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffla pistage"
+        },
+        "description": {
+          "short": {
+            "sv": "Pistagenötter, frukt, grädde & nutella"
+          },
+          "full": {
+            "sv": "En amerikansk våffla med pistage är en tjock, fluffig och krispig våffla som utmärker sig med en inblandning av finhackade pistagenötter i smeten, vilket ger en mild, nötig smak och en lätt grönaktig färg. Denna variant av den klassiska våfflan är mjuk på insidan och serveras med tillbehör som pistagekräm, frukt och grädde för att förstärka den nötiga smaken.\n\nKombinationen av den mättande våfflans konsistens med pistagens distinkta karaktär gör den till en både läcker och sofistikerad dessert eller brunchrätt."
+          }
+        },
+        "price": 129,
+        "slug": "amerikansk-vaffla-pistage",
+        "assets": [
+          {
+            "name": "pistage",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/d5c91598-3a52-405b-83f0-8b40a761a1b7",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T15:25:12.965061955Z",
+            "updated": "2025-10-07T15:25:12.965061955Z",
+            "version": 1,
+            "schema": 2,
+            "id": "d5c91598-3a52-405b-83f0-8b40a761a1b7"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Pistage"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Pistage",
+          "short_description": "Pistagenötter Frukt Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.007094686Z",
+        "updated": "2025-11-11T18:23:33.5538248Z",
+        "version": 13,
+        "deleted": false,
+        "product_id": "0f5ae3be-5261-49b0-a24b-b9d3fd8b7095"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffla kokos"
+        },
+        "description": {
+          "short": {
+            "sv": "Kokosglass, kokos, vit choklad, grädde & nutella"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-kokos",
+        "assets": [
+          {
+            "name": "Kokos",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/fdea4b2f-8505-4c62-9257-90e29908d859",
+            "alt": "",
+            "metadata": {},
+            "created": "2025-10-07T15:20:09.20046986Z",
+            "updated": "2025-10-07T15:21:18.72961991Z",
+            "version": 2,
+            "schema": 2,
+            "type": "IMAGE",
+            "id": "fdea4b2f-8505-4c62-9257-90e29908d859"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Kokos"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Kokos",
+          "short_description": "Kokosglass Kokos Vit Choklad Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.019853324Z",
+        "updated": "2025-11-11T18:23:04.727894771Z",
+        "version": 8,
+        "deleted": false,
+        "product_id": "5fb5cb63-79bc-41a5-83d6-cbd827d6042b"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffla Lotus"
+        },
+        "description": {
+          "short": {
+            "sv": "Lotus Biscoffkex, lotuskräm, vaniljglass & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-lotus",
+        "assets": [
+          {
+            "name": "Lotus",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/a6e32d71-dec7-4b13-b5c5-b8778636d610",
+            "alt": "",
+            "metadata": {},
+            "created": "2025-10-07T15:20:29.019431457Z",
+            "updated": "2025-10-07T15:21:38.535467095Z",
+            "version": 2,
+            "schema": 2,
+            "type": "IMAGE",
+            "id": "a6e32d71-dec7-4b13-b5c5-b8778636d610"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Lotus"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Lotus",
+          "short_description": "Lotuskex Lotuskräm Vaniljglass Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.032653373Z",
+        "updated": "2025-11-11T18:23:22.478713947Z",
+        "version": 9,
+        "deleted": false,
+        "product_id": "19fcd607-6c88-46a7-8827-46b8a0c94c24"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffla skagen"
+        },
+        "description": {
+          "short": {
+            "sv": "Med skagenröra & picklad rödlök"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-skagen",
+        "assets": [
+          {
+            "name": "Skagen",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/822458c3-7cd0-477c-8056-9e967a721308",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T15:25:30.398950761Z",
+            "updated": "2025-10-07T15:25:30.398950761Z",
+            "version": 1,
+            "schema": 2,
+            "id": "822458c3-7cd0-477c-8056-9e967a721308"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Skagen"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Skagen",
+          "short_description": "Skagenröra picklade rödlök",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.045543324Z",
+        "updated": "2025-11-06T13:48:37.807636683Z",
+        "version": 9,
+        "deleted": false,
+        "product_id": "5483611a-9ce4-4dca-b7c0-fbda71adde3f"
+      },
+      {
+        "name": {
+          "sv": "Kyckling & fetaostsallad"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "kyckling--fetaostsallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Kyckling & Fetaostsallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.060954061Z",
+        "updated": "2025-11-11T16:42:43.269881006Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "0d74e811-b6f3-4814-979a-6a2f9fc00f30"
+      },
+      {
+        "name": {
+          "sv": "Dubai American Pancakes"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 119,
+        "slug": "dubai-american-pancakes",
+        "assets": [
+          {
+            "name": "Dubai American Pancake",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "dubai"
+            ],
+            "url": "https://assets.busserz.com/se00001001/1c93efe7-2fbe-4500-9542-df9b025ed94e",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:30:10.173062269Z",
+            "updated": "2025-10-07T16:30:10.173062269Z",
+            "version": 1,
+            "schema": 2,
+            "id": "1c93efe7-2fbe-4500-9542-df9b025ed94e"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "dubai"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Dubai American Pancakes",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.157522953Z",
+        "updated": "2025-10-07T16:31:05.677179818Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "a30118ee-93f2-4c8e-b874-a8aa93bef2f7"
+      },
+      {
+        "name": {
+          "sv": "Broccoli & ädelostpaj"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "broccoli--adelostpaj",
+        "assets": [
+          {
+            "name": "Broccolli & Ädelost",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mat-pajer"
+            ],
+            "url": "https://assets.busserz.com/se00001001/c5c5e2e5-8503-4358-b30c-fa63a1b4b882",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:17:42.137821564Z",
+            "updated": "2025-10-07T16:17:42.137821564Z",
+            "version": 1,
+            "schema": 2,
+            "id": "c5c5e2e5-8503-4358-b30c-fa63a1b4b882"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mat-paj"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Broccoli & Ädelostpaj",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.168627435Z",
+        "updated": "2025-11-11T15:34:26.382335329Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "769a1942-7a96-43da-8fae-4811ce468489"
+      },
+      {
+        "name": {
+          "sv": "Galette skagenröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "galette-skagenrora",
+        "assets": [],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "galett"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Galette Skagenröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.224598373Z",
+        "updated": "2025-11-10T10:30:30.532446522Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "19e59d58-1b43-40a9-9d04-e1688696ccf8"
+      },
+      {
+        "name": {
+          "sv": "Galette rökt skinka"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "galette-rokt-skinka",
+        "assets": [],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "galett"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Galette Rökt Skinka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.230580124Z",
+        "updated": "2025-11-10T10:30:15.118433734Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "bb4cb4e9-5ac6-47a0-a217-bc5fa0f6ae8c"
+      },
+      {
+        "name": {
+          "sv": "Minipannkakor naturell"
+        },
+        "description": {
+          "short": {
+            "sv": "Nutella, vit choklad"
+          },
+          "full": {}
+        },
+        "price": 79,
+        "slug": "mini-pannkakor-naturell",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mini-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Pannkakor Naturell",
+          "short_description": "Nutella Vit Choklad",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.94116121Z",
+        "updated": "2025-11-11T15:41:10.850605292Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "04234878-b924-42d6-9552-c0791eb5517f"
+      },
+      {
+        "name": {
+          "sv": "Minivåfflor naturell"
+        },
+        "description": {
+          "short": {
+            "sv": "Nutella, grädde"
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "mini-vafflor-naturell",
+        "assets": [],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-mini-vaffles"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Våfflor Naturell",
+          "short_description": "Nutella Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.971026179Z",
+        "updated": "2025-11-13T08:57:59.316273176Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "fc3dfa96-7461-4996-a8c4-e51ab2cf491e"
+      },
+      {
+        "name": {
+          "sv": "Minivåfflor glass & frukt"
+        },
+        "description": {
+          "short": {
+            "sv": "Nutella, vit choklad, grädde"
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "mini-vafflor-glass-frukt",
+        "assets": [],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-mini-vaffles"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Våfflor Glass Frukt",
+          "short_description": "Nutella Vit Choklad Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.983359211Z",
+        "updated": "2025-11-13T08:57:47.422245417Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "8b7a366f-c224-413d-9105-5fa745f413df"
+      },
+      {
+        "name": {
+          "sv": "Churros jordgubb banan"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "churros-strawberry-banana",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "churros"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Churros Strawberry Banana",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.995574557Z",
+        "updated": "2025-11-11T19:35:23.943819249Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "1a99d77d-dfc1-424f-80b5-e81b2d81ea46"
+      },
+      {
+        "name": {
+          "sv": "Barn Amerikansk våffla"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras med grädde & sylt"
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "barn-amerikansk-vaffla",
+        "assets": [
+          {
+            "name": "Amerikansk Våffla",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "barn"
+            ],
+            "url": "https://assets.busserz.com/se00001001/669ed48b-ca5e-43aa-a9a7-2f5c33863a37",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-11-12T18:06:16.725539398Z",
+            "updated": "2025-11-12T18:06:16.725539398Z",
+            "version": 1,
+            "schema": 2,
+            "id": "669ed48b-ca5e-43aa-a9a7-2f5c33863a37"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "barn"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Barn Amerikansk Våffla",
+          "short_description": "Serveras med Grädde och Sylt",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.251072639Z",
+        "updated": "2025-11-12T18:06:43.683899115Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "bea7402d-93e5-4130-b3cd-af9bc6af327c"
+      },
+      {
+        "name": {
+          "sv": "Barn Spaghetti carbonara"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "barn-spagetti-carbonara",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "barn",
+          "pasta"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Barn Spagetti Carbonara",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.269097168Z",
+        "updated": "2025-11-06T13:41:58.866121344Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "692d18a3-759e-438b-abf5-5b97e1f038ca"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka Club Sandwich"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-macka-club-sandwich",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Macka Club Sandwich",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.337705493Z",
+        "updated": "2025-11-11T19:00:44.19479465Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "d618f66c-dd32-4bfc-b8ff-898efcb1d3d8"
+      },
+      {
+        "name": {
+          "sv": "Tonfiskwrap"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 105,
+        "slug": "tonfiskwrap",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "wraps"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Tonfiskwrap",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.374583488Z",
+        "updated": "2025-09-21T16:19:20.374583488Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "4566747f-1e23-4243-a18e-fcda6dd551ef"
+      },
+      {
+        "name": {
+          "sv": "Crêpes frukt"
+        },
+        "description": {
+          "short": {
+            "sv": "Jordgubbar, banan, grädde & nutella"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "crepe-frukt",
+        "assets": [
+          {
+            "name": "Frukt",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "crepes"
+            ],
+            "url": "https://assets.busserz.com/se00001001/20471afc-a608-44d6-b538-f5906e5b36fc",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-11-12T16:55:30.919042618Z",
+            "updated": "2025-11-12T16:55:30.919042618Z",
+            "version": 1,
+            "schema": 2,
+            "id": "20471afc-a608-44d6-b538-f5906e5b36fc"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crepé Frukt",
+          "short_description": "Jordgubbar Banan Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.400083085Z",
+        "updated": "2025-11-12T16:56:32.066466067Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "6ed4767e-b760-44c9-8acb-a7a415638dfc"
+      },
+      {
+        "name": {
+          "sv": "American Pancake frukt"
+        },
+        "description": {
+          "short": {
+            "sv": "Med jordgubb, banan, nutella & vit choklad"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "american-pancake-frukt",
+        "assets": [
+          {
+            "name": "Frukt",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-pancakes"
+            ],
+            "url": "https://assets.busserz.com/se00001001/e727de6f-6cf7-4c05-92f9-4dfc33e67241",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:01:21.273497404Z",
+            "updated": "2025-10-09T14:01:21.273497404Z",
+            "version": 1,
+            "schema": 2,
+            "id": "e727de6f-6cf7-4c05-92f9-4dfc33e67241"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Frukt",
+          "short_description": "Jordgubbar Banan Nutella Vit Choklad",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.445078948Z",
+        "updated": "2025-11-04T15:28:15.348925829Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "d6370814-87d4-422a-a0b6-ea1b02f6c785"
+      },
+      {
+        "name": {
+          "sv": "Pastasallad med kyckling-curry"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "pastasallad-med-kycklingcurry",
+        "assets": [],
+        "tags": [
+          "dagens"
+        ],
+        "categories": [
+          "pasta-sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Pastasallad med Kycklingcurry",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-01T13:10:45.909062898Z",
+        "updated": "2025-11-11T16:14:21.035368785Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "8f25bc2c-2989-447e-93b9-eb812bf11490"
+      },
+      {
+        "name": {
+          "sv": "Frukostfralla & kaffe/te"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras mellan 08.00 - 10.00"
+          },
+          "full": {}
+        },
+        "price": 59,
+        "slug": "fralla-med-kaffetea",
+        "assets": [],
+        "tags": [],
+        "categories": [
+          "frukost"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Fralla med Kaffe/Tea",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-11T16:03:37.569208973Z",
+        "updated": "2025-11-10T10:26:45.163398028Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "57fbc2ab-19f0-4b9f-9ee3-e7423efb77dd"
+      },
+      {
+        "name": {
+          "sv": "Fralla & kokt ägg"
+        },
+        "description": {
+          "short": {
+            "sv": "Frukostfralla & ett kokt ägg"
+          },
+          "full": {}
+        },
+        "price": 75,
+        "slug": "fralla--1-kokt-agg-med-kaffetea",
+        "assets": [],
+        "tags": [],
+        "categories": [
+          "frukost"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Fralla & 1 kokt ägg med Kaffe/Tea",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-11T16:05:32.83022534Z",
+        "updated": "2025-11-06T15:08:36.038579324Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "0d3edd0f-db94-4843-a9a5-8e4b67263e73"
+      },
+      {
+        "name": {
+          "sv": "Bubbelvåffla KitKat"
+        },
+        "description": {
+          "short": {
+            "sv": "KitKatkex, chokladglass, grädde & nutella"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "bubble-vaffla-kitkat",
+        "assets": [
+          {
+            "name": "Kitkat",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bubble-våffla"
+            ],
+            "url": "https://assets.busserz.com/se00001001/ebda4ed5-03e4-4e3d-bab2-7064e51effa0",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T15:02:12.005977411Z",
+            "updated": "2025-10-09T15:02:12.005977411Z",
+            "version": 1,
+            "schema": 2,
+            "id": "ebda4ed5-03e4-4e3d-bab2-7064e51effa0"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "bubble-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Kitkat"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bubble Våffla KitKat",
+          "short_description": "Kitkex Chokladglass Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.961941888Z",
+        "updated": "2025-11-06T14:09:01.213912799Z",
+        "version": 9,
+        "deleted": false,
+        "product_id": "f6b755bd-a5fe-477d-bd4f-0eab42413651"
+      },
+      {
+        "name": {
+          "sv": "Bubbelvåffla daim"
+        },
+        "description": {
+          "short": {
+            "sv": "Med daimglass, vit choklad, grädde & nutella"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "bubble-vaffla-daim",
+        "assets": [
+          {
+            "name": "Daim",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bubble-våffla"
+            ],
+            "url": "https://assets.busserz.com/se00001001/e5137f03-6e52-461c-b714-e1b1147dc303",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T15:01:56.175237252Z",
+            "updated": "2025-10-09T15:01:56.175237252Z",
+            "version": 1,
+            "schema": 2,
+            "id": "e5137f03-6e52-461c-b714-e1b1147dc303"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "bubble-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Daim"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bubble Våffla Daim",
+          "short_description": "Daimglass Vit Choklad Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.968339665Z",
+        "updated": "2025-11-06T14:13:34.589830599Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "adada505-d58d-47cf-98e0-2d40914995a1"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffel sandwich"
+        },
+        "description": {
+          "short": {
+            "sv": "Glass instoppat i våfflan. Otroligt gott!!"
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "amerikansk-vaffla-sandwich",
+        "assets": [
+          {
+            "name": "Sandwich",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/21ddcb9b-749c-44ae-a487-758a85611463",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-11-12T14:20:14.09242863Z",
+            "updated": "2025-11-12T14:20:14.09242863Z",
+            "version": 1,
+            "schema": 2,
+            "id": "21ddcb9b-749c-44ae-a487-758a85611463"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Sandwich"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Sandwich",
+          "short_description": "Glass Grädde mellan Våfflor",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.038999274Z",
+        "updated": "2025-11-12T14:24:42.152209299Z",
+        "version": 11,
+        "deleted": false,
+        "product_id": "90f9d4bb-eaba-4ba3-9ad1-458391624575"
+      },
+      {
+        "name": {
+          "sv": "Avokado & fetaostsallad"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "avokado--fetaostsallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Avokado & Fetaostsallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.072747748Z",
+        "updated": "2025-11-11T16:39:00.315447857Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "b7b381ad-897b-4b5f-b444-ba6b74deb08c"
+      },
+      {
+        "name": {
+          "sv": "Chevrésallad"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 130,
+        "slug": "chevresallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Chevrésallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.127437433Z",
+        "updated": "2025-08-17T09:08:49.127437433Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "fcf1383d-a77d-4b44-98c1-e83c759f6a1d"
+      },
+      {
+        "name": {
+          "sv": "Dubai crêpe"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "dubai-crepes",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "dubai"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Dubai Crépes",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.13885218Z",
+        "updated": "2025-11-06T14:41:09.595722041Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "a8d00747-a0f1-4b5e-9021-5d1ee6684c7d"
+      },
+      {
+        "name": {
+          "sv": "Bakad potatis kycklingröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "bakad-potaits-kyckling--curryrora",
+        "assets": [
+          {
+            "name": "Kyckling Curry röra",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bakad-potatis"
+            ],
+            "url": "https://assets.busserz.com/se00001001/4fe5a307-2771-4bb1-9595-e59fa022defe",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T08:00:35.6358969Z",
+            "updated": "2025-10-09T08:00:35.6358969Z",
+            "version": 1,
+            "schema": 2,
+            "id": "4fe5a307-2771-4bb1-9595-e59fa022defe"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "bakad-potatis"
+        ],
+        "metadata": {
+          "displayName": "Kyckling & Curryröra"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bakad Potaits Kyckling & Curryröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.184886861Z",
+        "updated": "2025-11-06T13:55:59.961591606Z",
+        "version": 5,
+        "deleted": false,
+        "product_id": "bbc594e8-957d-4605-89e2-04e3dceb56f7"
+      },
+      {
+        "name": {
+          "sv": "Bakad potatis tonfiskröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 135,
+        "slug": "bakad-potaits-tonfiskrora",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "bakad-potatis"
+        ],
+        "metadata": {
+          "displayName": "Tonfiskröra"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bakad Potaits Tonfiskröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.190072836Z",
+        "updated": "2025-11-06T13:55:28.911931372Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "21949d28-4bd1-4589-8145-ae15696e8ef2"
+      },
+      {
+        "name": {
+          "sv": "Galette kycklingröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "galette-kycklingrora",
+        "assets": [],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "galett"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Galette Kycklingröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.213060093Z",
+        "updated": "2025-11-10T10:30:03.218727798Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "65fe5f69-4c86-46c6-b482-cd2899952581"
+      },
+      {
+        "name": {
+          "sv": "Galette tonfiskröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "galette-tonfiskrora",
+        "assets": [],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "galett"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Galette Tonfiskröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.218632863Z",
+        "updated": "2025-11-10T10:30:42.47528826Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "8d447d99-0a19-4ba7-a7f4-c9bb52a04ac4"
+      },
+      {
+        "name": {
+          "sv": "Minivåfflor frukt"
+        },
+        "description": {
+          "short": {
+            "sv": "Nutella, vit choklad, grädde"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "mini-vafflor-frukt",
+        "assets": [
+          {
+            "name": "Frukt",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mini-vaffles"
+            ],
+            "url": "https://assets.busserz.com/se00001001/78ecbb50-d250-4605-8282-dd7006a02796",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:15:10.859875028Z",
+            "updated": "2025-10-09T14:15:10.859875028Z",
+            "version": 1,
+            "schema": 2,
+            "id": "78ecbb50-d250-4605-8282-dd7006a02796"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-mini-vaffles"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Våfflor Frukt",
+          "short_description": "Nutella Vit Choklad Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.976976885Z",
+        "updated": "2025-11-13T08:57:31.14234192Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "bbf8f023-c3a5-42d5-89f5-8f102495a10d"
+      },
+      {
+        "name": {
+          "sv": "Pannkakor 3st"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "barn-pannkakor-3st",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "barn"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Barn Pannkakor 3st",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.245329161Z",
+        "updated": "2025-11-11T19:21:57.296416442Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "6bf40771-67b8-4d39-a29a-c7444677c7cc"
+      },
+      {
+        "name": {
+          "sv": "Glass Marängsviss"
+        },
+        "description": {
+          "short": {
+            "sv": "3 kulor vaniljglass, maräng, grädde, toppings"
+          },
+          "full": {}
+        },
+        "price": 99,
+        "slug": "glass-marangsviss",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "glass"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Glass Marängsviss",
+          "short_description": "3 Vaniljglass Maränger Toppings Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.297499296Z",
+        "updated": "2025-11-11T18:52:29.635449464Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "31f2a3db-cf1b-4b34-b024-c667ed695991"
+      },
+      {
+        "name": {
+          "sv": "Glass Mormors jordgubbsdröm"
+        },
+        "description": {
+          "short": {
+            "sv": "Jordgubbsglass, jordgubbar, grädde, topping, strössel"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "glass-mormors-jordgubbsdrom",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "glass"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Glass Mormors Jordgubbsdröm",
+          "short_description": "Jordgubbsglass Jordgubbar Topping Grädde Strössel",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.303552196Z",
+        "updated": "2025-11-11T18:56:42.780054715Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "b07d7438-6f5f-4753-90df-7dd3b1b60f6f"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka chevré"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-macka-chevre",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Macka Chevré",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.309474047Z",
+        "updated": "2025-11-11T18:59:13.338956787Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "0504d628-0fe5-4acb-85c5-a9b0e6f0a992"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka mozzarela & tomat"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-macka-mozzarela--tomat",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Macka Mozzarela & Tomat",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.315416701Z",
+        "updated": "2025-11-11T19:03:38.360860336Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "2c5adfe9-7f46-4882-b57d-78276651475d"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka halloumi"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-macka-halloumi",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Macka Halloumi",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.332052092Z",
+        "updated": "2025-11-11T19:01:01.183229938Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "11ee0394-19ba-4ca1-bb18-f139888baba6"
+      },
+      {
+        "name": {
+          "sv": "Leverpastejmacka"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 45,
+        "slug": "leverpastejmacka",
+        "assets": [
+          {
+            "name": "Leverpastej",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mackor"
+            ],
+            "url": "https://assets.busserz.com/se00001001/2589da7b-39b6-4001-9d44-c585ae688bf5",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T08:29:34.888570902Z",
+            "updated": "2025-10-09T08:29:34.888570902Z",
+            "version": 1,
+            "schema": 2,
+            "id": "2589da7b-39b6-4001-9d44-c585ae688bf5"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Leverpastejmacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.358742749Z",
+        "updated": "2025-10-09T08:30:54.693808444Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "001919d8-b97f-498a-b60a-955b4431dfc1"
+      },
+      {
+        "name": {
+          "sv": "Halloumiwrap"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 105,
+        "slug": "halloumiwrap",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "wraps"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Halloumiwrap",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.380517893Z",
+        "updated": "2025-09-21T16:19:20.380517893Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "bde2a54c-db28-4a9b-a5e5-2dde057ad081"
+      },
+      {
+        "name": {
+          "sv": "Skagenwrap"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 105,
+        "slug": "skagenwrap",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "wraps"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Skagenwrap",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.385574801Z",
+        "updated": "2025-09-21T16:19:20.385574801Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "dc312ebf-b0d7-4c3e-905f-d59e44027980"
+      },
+      {
+        "name": {
+          "sv": "Crêpe lotus"
+        },
+        "description": {
+          "short": {
+            "sv": "Lotus Biscoffkex, lotuskräm, frukt & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "crepe-lotus",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crepé Lotus",
+          "short_description": "Lotuskex Lotuskräm Frukt Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.410392017Z",
+        "updated": "2025-11-06T14:39:07.32341547Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "ac2ce358-180c-4595-80e5-cab05ebbf2c5"
+      },
+      {
+        "name": {
+          "sv": "Crêpes pistage"
+        },
+        "description": {
+          "short": {
+            "sv": "Pistagekräm, pistagenötter & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "crepe-pistage",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crepé Pistage",
+          "short_description": "Pistagekräm Pistagenötter Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.42319644Z",
+        "updated": "2025-11-06T14:38:06.673711503Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "36c74e3c-8fa4-4470-b2dc-9c7e9021d37e"
+      },
+      {
+        "name": {
+          "sv": "American Pancake hjortron"
+        },
+        "description": {
+          "short": {
+            "sv": "Med hjortronsylt, vaniljglass & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "american-pancake-hjortron",
+        "assets": [
+          {
+            "name": "Hjortron",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-pancakes"
+            ],
+            "url": "https://assets.busserz.com/se00001001/f7dd05e2-c83e-42c3-8722-06a8eced727e",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:01:42.215360204Z",
+            "updated": "2025-10-09T14:01:42.215360204Z",
+            "version": 1,
+            "schema": 2,
+            "id": "f7dd05e2-c83e-42c3-8722-06a8eced727e"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Hjortron",
+          "short_description": "Hjortronsylt Vaniljglass Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.456435761Z",
+        "updated": "2025-11-04T15:29:57.246507174Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "e2c14b43-7162-40d9-bb8c-6a4620301962"
+      },
+      {
+        "name": {
+          "sv": "American Pancake banan"
+        },
+        "description": {
+          "short": {
+            "sv": "Med banan, kolasås & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "american-pancake-banan",
+        "assets": [
+          {
+            "name": "Banan",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-pancakes"
+            ],
+            "url": "https://assets.busserz.com/se00001001/7fe82b0c-beb8-402a-b939-e28b7d48a4b9",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T13:57:58.635753453Z",
+            "updated": "2025-10-09T13:57:58.635753453Z",
+            "version": 1,
+            "schema": 2,
+            "id": "7fe82b0c-beb8-402a-b939-e28b7d48a4b9"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "american-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "American Pancake Banan",
+          "short_description": "Banan Kolasås Grädde",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.461471215Z",
+        "updated": "2025-11-04T15:25:57.630826324Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "080516c5-7320-4ba6-8662-f66afa42771a"
+      },
+      {
+        "name": {
+          "sv": "Bakad potatis laxröra"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "bakad-potatis-med-laxrora",
+        "assets": [],
+        "tags": [
+          "dagens"
+        ],
+        "categories": [
+          "bakad-potatis"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bakad Potatis med Laxröra",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-01T13:19:08.801105035Z",
+        "updated": "2025-11-06T13:56:21.403038391Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "2531998b-3d41-4ec5-bfed-094c7d532f0e"
+      },
+      {
+        "name": {
+          "sv": "Bulgursallad med chevré"
+        },
+        "description": {
+          "short": {
+            "sv": "Med rödbetor, picklad rödkål, honung & valnötter"
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "bulgursallad-med-chevre-honung-rodbetor-walnotter-picklad-rodkal",
+        "assets": [],
+        "tags": [
+          "dagens"
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bulgursallad med Chevré Honung Rödbetor Walnötter Picklad Rödkål",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-01T13:23:50.007411863Z",
+        "updated": "2025-11-11T16:40:49.868944632Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "709d69cd-de2e-4c7a-917a-6f2c7cdf1956"
+      },
+      {
+        "name": {
+          "sv": "Dubai cheesecake"
+        },
+        "description": {
+          "short": {
+            "sv": "Hemmagjord Dubai cheesecake"
+          },
+          "full": {}
+        },
+        "price": 65,
+        "slug": "dubai-cheesecake",
+        "assets": [
+          {
+            "name": "Dubai Cheesecake",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bakverk"
+            ],
+            "url": "https://assets.busserz.com/se00001001/72bfdf96-4713-4620-9f5f-525404d1e671",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T17:09:54.405338882Z",
+            "updated": "2025-10-09T17:09:54.405338882Z",
+            "version": 1,
+            "schema": 2,
+            "id": "72bfdf96-4713-4620-9f5f-525404d1e671"
+          }
+        ],
+        "tags": [],
+        "categories": [
+          "bakverk"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Dubai Cheesecake",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-09T12:49:25.317322879Z",
+        "updated": "2025-11-11T18:29:11.075557414Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "108de7c2-cb09-4371-94ab-02ec123bbdc1"
+      },
+      {
+        "name": {
+          "sv": "Grillad levain & äggröra"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras med grönsaker"
+          },
+          "full": {}
+        },
+        "price": 85,
+        "slug": "grillad-levain-och-aggrora-gronsaker",
+        "assets": [],
+        "tags": [],
+        "categories": [
+          "frukost"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Levain och Äggröra, Grönsaker",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-11T16:09:05.903814702Z",
+        "updated": "2025-11-06T15:04:27.61855645Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "757aca4e-a03e-4c6d-95a6-b65e69df7088"
+      },
+      {
+        "name": {
+          "sv": "Bubbelvåffla banana split"
+        },
+        "description": {
+          "short": {
+            "sv": "Glass, banan, grädde & nutella"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "bubble-vaffla-banana-split",
+        "assets": [
+          {
+            "name": "Banana Split",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bubble-våffla"
+            ],
+            "url": "https://assets.busserz.com/se00001001/d9fa22af-5f93-4156-9397-e6a73573a52c",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:08:55.046958798Z",
+            "updated": "2025-10-07T16:08:55.046958798Z",
+            "version": 1,
+            "schema": 2,
+            "id": "d9fa22af-5f93-4156-9397-e6a73573a52c"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "bubble-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Banana Split"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bubble Våffla Banana Split",
+          "short_description": "Banan Glass Grädde Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.97469247Z",
+        "updated": "2025-11-06T14:08:31.977851281Z",
+        "version": 8,
+        "deleted": false,
+        "product_id": "028d2849-07f7-4887-b32a-2d2ac43728f5"
+      },
+      {
+        "name": {
+          "sv": "Bubbelvåffla Lotus"
+        },
+        "description": {
+          "short": {
+            "sv": "Lotus Biscoffkex, lotuskräm, kolaglass & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "bubble-vaffla-lotus",
+        "assets": [
+          {
+            "name": "Lotus",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bubble-våffla"
+            ],
+            "url": "https://assets.busserz.com/se00001001/f4bbbfe8-e840-47ca-9173-ea22fcd4d5f4",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T16:08:28.817703694Z",
+            "updated": "2025-10-07T16:08:28.817703694Z",
+            "version": 1,
+            "schema": 2,
+            "id": "f4bbbfe8-e840-47ca-9173-ea22fcd4d5f4"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "bubble-vaffle"
+        ],
+        "metadata": {
+          "display-name": "Lotus",
+          "displayName": "Lotus"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Bubble Våffla Lotus",
+          "short_description": "Lotuskex Lotuskräm Kolaglass Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:48.981174586Z",
+        "updated": "2025-11-06T14:09:18.079566387Z",
+        "version": 8,
+        "deleted": false,
+        "product_id": "26859ccd-8d3f-48be-92dd-f407465ba688"
+      },
+      {
+        "name": {
+          "sv": "Amerikansk våffla frutella"
+        },
+        "description": {
+          "short": {
+            "sv": "Jordgubbar, banan, vit choklad & grädde"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "amerikansk-vaffla-frutella",
+        "assets": [
+          {
+            "name": "frutella",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "american-vaffle"
+            ],
+            "url": "https://assets.busserz.com/se00001001/e53211cb-1947-4560-a2a1-fcc956552c3f",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-07T15:26:11.805204083Z",
+            "updated": "2025-10-07T15:26:11.805204083Z",
+            "version": 1,
+            "schema": 2,
+            "id": "e53211cb-1947-4560-a2a1-fcc956552c3f"
+          }
+        ],
+        "tags": [
+          "glutenfri"
+        ],
+        "categories": [
+          "american-vaffle"
+        ],
+        "metadata": {
+          "displayName": "Frutella"
+        },
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Amerikansk Våffla Frutella",
+          "short_description": "Jordgubbar Banan Vit Choklad Grädde",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.000500628Z",
+        "updated": "2025-11-11T18:22:31.971432957Z",
+        "version": 9,
+        "deleted": false,
+        "product_id": "458f21d7-fbe9-4c7a-af0e-19d9479c1231"
+      },
+      {
+        "name": {
+          "sv": "Lax & avokadosallad"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "lax--avokadosallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Lax & Avokadosallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.054606116Z",
+        "updated": "2025-11-11T16:43:02.435540204Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "562de3f4-f0ef-41ba-bc3a-e1c9405ffd49"
+      },
+      {
+        "name": {
+          "sv": "Räksallad"
+        },
+        "description": {
+          "short": {
+            "sv": "Med ägg"
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "sallad-rakor--agg",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Sallad Räkor & Ägg",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.067028758Z",
+        "updated": "2025-11-11T16:45:20.585115241Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "f40d4f25-b96d-4e82-bbb0-18b0cea34da9"
+      },
+      {
+        "name": {
+          "sv": "Sallad kycklingröra & avokado"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "sallad-kycklingrora--avokado",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Sallad Kycklingröra & Avokado",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.078809868Z",
+        "updated": "2025-11-11T16:44:47.864008366Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "a6a34ab8-29e0-4add-8f41-dd67786c83a9"
+      },
+      {
+        "name": {
+          "sv": "Husets sallad rökt lax"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 130,
+        "slug": "husets-rokt-lax-sallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Husets Rökt Lax Sallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.091902986Z",
+        "updated": "2025-11-11T16:46:07.956607153Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "157d3f12-499a-48e6-a5ee-d01787099247"
+      },
+      {
+        "name": {
+          "sv": "Caesarsallad"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 130,
+        "slug": "caesarsallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Caesarsallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.116059465Z",
+        "updated": "2025-08-17T09:08:49.116059465Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "b70f3658-8e9c-4fb5-9350-6080bb8a2adf"
+      },
+      {
+        "name": {
+          "sv": "Halloumisallad"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 130,
+        "slug": "halloumisallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Halloumisallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.121734627Z",
+        "updated": "2025-08-17T09:08:49.121734627Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "0cfd8a24-e81a-4bf6-abee-7cdc19a6ab0e"
+      },
+      {
+        "name": {
+          "sv": "Fruktsallad"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 145,
+        "slug": "fruktsallad",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "sallad"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Fruktsallad",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.133161294Z",
+        "updated": "2025-08-17T09:08:49.133161294Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "16830995-d689-43b4-9f3f-0e42be5017e6"
+      },
+      {
+        "name": {
+          "sv": "Dubai Strawberry Cup"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 119,
+        "slug": "dubai-strawberry-cup",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "dubai"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Dubai Strawberry Cup",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.145192258Z",
+        "updated": "2025-08-17T09:08:49.145192258Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "35b9f5a5-3ffe-4e00-8f83-935c041214c5"
+      },
+      {
+        "name": {
+          "sv": "Minipannkakor pistage"
+        },
+        "description": {
+          "short": {
+            "sv": "Pistagekräm, frukt, choklad, nutella"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "mini-pannkakor-pistage",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mini-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Pannkakor Pistage",
+          "short_description": "Pistagekräm Frukt Choklad Nutella",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.952876974Z",
+        "updated": "2025-11-11T15:41:53.483102642Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "2bfd3881-b89b-40a1-b318-8c532bb03ba1"
+      },
+      {
+        "name": {
+          "sv": "Minipannkakor marshmallow"
+        },
+        "description": {
+          "short": {
+            "sv": "Nutella, vit choklad"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "mini-pannkakor-marshmallow",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mini-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Pannkakor Marshmallow",
+          "short_description": "Nutella Vit Choklad",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.958811294Z",
+        "updated": "2025-11-11T15:39:40.708189633Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "0c1fc4a1-fa0f-4078-a1e7-436c3c9797f4"
+      },
+      {
+        "name": {
+          "sv": "Minipannkakor på spett"
+        },
+        "description": {
+          "short": {
+            "sv": "Rosa choklad, jordgubbar, vit choklad"
+          },
+          "full": {}
+        },
+        "price": 99,
+        "slug": "mini-pannkakor-spett",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mini-pancakes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Pannkakor Spett",
+          "short_description": "Rosa Choklad Jordgubbar Vit Choklad",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.964899414Z",
+        "updated": "2025-11-11T15:42:52.340533679Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "3e0ab38b-8f5b-4c3f-8ea8-799837779a16"
+      },
+      {
+        "name": {
+          "sv": "Churros standard"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 79,
+        "slug": "churros-standard",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "churros"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Churros Standard",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:49.989454772Z",
+        "updated": "2025-11-06T14:20:59.929608608Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "7178d4be-21f2-44ee-a7bc-69e0f6eb2dd4"
+      },
+      {
+        "name": {
+          "sv": "Churros Nutellaglass"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras med nutellaglass och nutellakräm"
+          },
+          "full": {}
+        },
+        "price": 109,
+        "slug": "churros-nutella-glass",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "churros"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Churros Nutella Glass",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:50.00173943Z",
+        "updated": "2025-11-12T16:34:54.363007162Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "e5e88dcb-d3b9-49e9-bc89-4c1d6eb7025f"
+      },
+      {
+        "name": {
+          "sv": "Crêpe roll pistage"
+        },
+        "description": {
+          "short": {
+            "sv": "Innehåller pistageglass bananer pistage- & nutellakräm. Toppas med pistage- & chokladsås samt pistagenötter."
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "crepe-roll-pistage",
+        "assets": [
+          {
+            "name": "Pistage",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "crepe-rolls"
+            ],
+            "url": "https://assets.busserz.com/se00001001/124db764-0c36-413f-b787-fce148a15fce",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T14:35:37.972245511Z",
+            "updated": "2025-10-09T14:35:37.972245511Z",
+            "version": 1,
+            "schema": 2,
+            "id": "124db764-0c36-413f-b787-fce148a15fce"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepe-roll"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crépe Roll Pistage",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-08-17T09:08:50.013646859Z",
+        "updated": "2025-11-12T16:14:48.243521102Z",
+        "version": 7,
+        "deleted": false,
+        "product_id": "dd74ba7c-0c59-4717-8dbd-8cb5c8c8da8b"
+      },
+      {
+        "name": {
+          "sv": "Barn Pasta bolognese"
+        },
+        "description": {
+          "short": {
+            "sv": "Pasta med köttfärssås på det italienska viset"
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "barn-pasta-bolognese",
+        "assets": [],
+        "tags": [],
+        "categories": [
+          "barn",
+          "pasta"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Barn Pasta Bolognese",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.263061401Z",
+        "updated": "2025-11-11T16:04:18.208329114Z",
+        "version": 4,
+        "deleted": false,
+        "product_id": "e35473da-57d1-4f0d-9e07-73946c323770"
+      },
+      {
+        "name": {
+          "sv": "Glass Banana split"
+        },
+        "description": {
+          "short": {
+            "sv": "3 glasskulor, banan, toppings"
+          },
+          "full": {}
+        },
+        "price": 99,
+        "slug": "glass-banana-splitt",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "glass"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Glass Banana Splitt",
+          "short_description": "3 Glass Banan Toppings",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.291778795Z",
+        "updated": "2025-11-11T18:56:31.929785046Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "e74f1c37-59f5-4e47-af30-7cc27f3a6b2b"
+      },
+      {
+        "name": {
+          "sv": "Ostmacka"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 45,
+        "slug": "ostmacka",
+        "assets": [
+          {
+            "name": "Ostmacka",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mackor"
+            ],
+            "url": "https://assets.busserz.com/se00001001/bac414b8-33f8-4725-b0be-56fcef419c4a",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T08:30:29.316633662Z",
+            "updated": "2025-10-09T08:30:29.316633662Z",
+            "version": 1,
+            "schema": 2,
+            "id": "bac414b8-33f8-4725-b0be-56fcef419c4a"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Ostmacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.343094202Z",
+        "updated": "2025-10-09T08:31:21.220932708Z",
+        "version": 2,
+        "deleted": false,
+        "product_id": "f2e49413-d314-4bc2-9af1-2a99a4ca8f21"
+      },
+      {
+        "name": {
+          "sv": "Ägg & kaviarmacka"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 45,
+        "slug": "agg--kaviarmacka",
+        "assets": [
+          {
+            "name": "Äggmacka",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "mackor"
+            ],
+            "url": "https://assets.busserz.com/se00001001/29542c25-0125-48de-9990-bec94df4c0e4",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T08:30:10.685379025Z",
+            "updated": "2025-10-09T08:30:10.685379025Z",
+            "version": 1,
+            "schema": 2,
+            "id": "29542c25-0125-48de-9990-bec94df4c0e4"
+          }
+        ],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Ägg & Kaviarmacka",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.353705931Z",
+        "updated": "2025-11-10T12:20:14.198833264Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "8ff139c3-e205-4044-9d32-bacc9551d951"
+      },
+      {
+        "name": {
+          "sv": "Kycklingwrap"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 105,
+        "slug": "kycklingwrap",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "wraps"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Kycklingwrap",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.3638461Z",
+        "updated": "2025-09-21T16:19:20.3638461Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "d5c97bca-f3ce-4b30-82b4-d6dcb7c3effe"
+      },
+      {
+        "name": {
+          "sv": "Caesarwrap"
+        },
+        "description": {
+          "full": {},
+          "short": {
+            "sv": ""
+          }
+        },
+        "price": 105,
+        "slug": "caesarwrap",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "wraps"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Caesarwrap",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.369386249Z",
+        "updated": "2025-09-21T16:19:20.369386249Z",
+        "version": 1,
+        "deleted": false,
+        "product_id": "6dbef611-e76d-4185-bfc8-3006bd010ddf"
+      },
+      {
+        "name": {
+          "sv": "Crêpe nutella"
+        },
+        "description": {
+          "short": {
+            "sv": "Glass, grädde, nutella & frukt"
+          },
+          "full": {}
+        },
+        "price": 119,
+        "slug": "crepe-nutello",
+        "assets": [],
+        "tags": [
+          ""
+        ],
+        "categories": [
+          "crepes"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Crepé Nutello",
+          "short_description": "Glass Grädde Nutella Frukt",
+          "preparation": ""
+        },
+        "created": "2025-09-21T16:19:20.434958527Z",
+        "updated": "2025-11-06T14:38:54.788907427Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "4f88f049-97f9-4506-b395-1237b38c60d4"
+      },
+      {
+        "name": {
+          "sv": "Grillad macka tonfisk"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras på levainbröd"
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "grillad-levain-tonfisksmorgas",
+        "assets": [],
+        "tags": [
+          "dagens"
+        ],
+        "categories": [
+          "grillade-mackor"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Grillad Levain Tonfisksmörgås",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-01T13:16:03.299911887Z",
+        "updated": "2025-11-09T11:53:51.272142437Z",
+        "version": 8,
+        "deleted": false,
+        "product_id": "ede6b78d-26bc-4576-8367-070c31acc12e"
+      },
+      {
+        "name": {
+          "sv": "Nutella cheesecake"
+        },
+        "description": {
+          "short": {
+            "sv": ""
+          },
+          "full": {}
+        },
+        "price": 65,
+        "slug": "nutella-cheesecake",
+        "assets": [
+          {
+            "name": "Nutella Cheesecake",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "bakverk"
+            ],
+            "url": "https://assets.busserz.com/se00001001/0f923152-f1e2-4faf-a4cf-65afd6cf3853",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-10-09T17:10:11.161522517Z",
+            "updated": "2025-10-09T17:10:11.161522517Z",
+            "version": 1,
+            "schema": 2,
+            "id": "0f923152-f1e2-4faf-a4cf-65afd6cf3853"
+          }
+        ],
+        "tags": [],
+        "categories": [
+          "bakverk"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Nutella Cheesecake",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-09T17:09:02.363487471Z",
+        "updated": "2025-11-11T18:30:22.092408859Z",
+        "version": 5,
+        "deleted": false,
+        "product_id": "fdb4698c-6926-4c9b-8511-b408403f0736"
+      },
+      {
+        "name": {
+          "sv": "Fralla & smoothie/turkisk yoghurt"
+        },
+        "description": {
+          "short": {
+            "sv": "Frukostfralla & smoothie eller turkisk yoghurt"
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "fralla--smoothie-eller-turkisk-yoghurt",
+        "assets": [],
+        "tags": [],
+        "categories": [
+          "frukost"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Fralla & Smoothie eller Turkisk Yoghurt",
+          "short_description": "",
+          "preparation": ""
+        },
+        "created": "2025-10-11T16:07:41.066802793Z",
+        "updated": "2025-11-06T15:13:43.167715835Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "83ac4380-9966-475b-a35b-20cf73a932bc"
+      },
+      {
+        "name": {
+          "sv": "Dubai Crepe Roll"
+        },
+        "description": {
+          "short": {
+            "sv": "Innehåller kadayif, pistage- & nutellakräm samt färska jordgubbar. Toppas med pistage- & chokladsås samt pistagenötter."
+          },
+          "full": {}
+        },
+        "price": 129,
+        "slug": "dubai-crepe-roll",
+        "assets": [
+          {
+            "name": "Dubai",
+            "asset_type": "FILE",
+            "media_type": "IMAGE",
+            "tags": [],
+            "categories": [
+              "crepe-rolls"
+            ],
+            "url": "https://assets.busserz.com/se00001001/78533463-18fe-402d-a6bc-8e8f649bf314",
+            "alt": null,
+            "metadata": {},
+            "created": "2025-11-12T15:58:43.618038867Z",
+            "updated": "2025-11-12T15:58:43.618038867Z",
+            "version": 1,
+            "schema": 2,
+            "id": "78533463-18fe-402d-a6bc-8e8f649bf314"
+          }
+        ],
+        "tags": [],
+        "categories": [
+          "crepe-roll"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Dubai Crepe Roll",
+          "short_description": "Innehåller qadaif, pistagekräm och nutellakräm och färska jordgubbar.",
+          "preparation": ""
+        },
+        "created": "2025-11-12T15:29:24.384325465Z",
+        "updated": "2025-11-12T16:31:29.640829342Z",
+        "version": 6,
+        "deleted": false,
+        "product_id": "d74cc9e9-a6c4-4463-8703-a678bab6fa04"
+      },
+      {
+        "name": {
+          "sv": "Mini Churros 15st"
+        },
+        "description": {
+          "short": {
+            "sv": "Serveras med 1 sås. Välj sås mellan Nutella, Pistage, Lotus, Vit Choklad"
+          },
+          "full": {}
+        },
+        "price": 89,
+        "slug": "mini-churros-15st",
+        "assets": [],
+        "tags": [],
+        "categories": [
+          "churros"
+        ],
+        "metadata": {},
+        "availability_status": "AVAILABLE",
+        "active": true,
+        "internal": {
+          "name": "Mini Churros 15st",
+          "short_description": "Serveras med 1 sås. Välj sås mellan Nutella, Pistage, Lotus, Vit Choklad",
+          "preparation": ""
+        },
+        "created": "2025-11-12T16:36:46.220302759Z",
+        "updated": "2025-11-12T16:37:01.005024503Z",
+        "version": 3,
+        "deleted": false,
+        "product_id": "c2bebc76-3b15-4324-9157-a56efb9d04fb"
+      }
+    ],
+    "updatedAt": 1763123147055,
+    "isFetching": false
+  }
 }

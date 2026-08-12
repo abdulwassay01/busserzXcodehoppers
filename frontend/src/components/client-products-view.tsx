@@ -70,40 +70,38 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
   }, [initialProducts]);
 
   return (
-    <>
-      <div className="container-wide products-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
-        {products.map((product, idx) => {
-          const pName = safeString(product.name, "Product");
-          const pDesc = safeString(product.description, "No description available.");
-          const pCat = safeString(product.category, "General");
-          const pPrice = typeof product.price === "number" && Number.isFinite(product.price) ? product.price : Number(product.price ?? 0);
+    <div className="products-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
+      {products.map((product, idx) => {
+        const pName = safeString(product.name, "Product");
+        const pDesc = safeString(product.description, "No description available.");
+        const pCat = safeString(product.category, "General");
+        const pPrice = typeof product.price === "number" && Number.isFinite(product.price) ? product.price : Number(product.price ?? 0);
 
-          return (
-            <article key={product.id || idx} className="product-card">
-              {product.imageUrl ? (
-                <div className="product-image">
-                  <Image
-                    src={product.imageUrl}
-                    alt={pName}
-                    width={300}
-                    height={200}
-                    unoptimized
-                  />
-                </div>
-              ) : (
-                <div className="product-image no-image">No image</div>
-              )}
-              <span className="badge">{pCat}</span>
-              <h2 className="section-title">{pName}</h2>
-              <p className="muted">{pDesc}</p>
-              <p>
-                <strong>${(Number.isFinite(pPrice) ? pPrice : 0).toFixed(2)}</strong>
-                {product.featured ? " · Chef Pick" : ""}
-              </p>
-            </article>
-          );
-        })}
-      </div>
-    </>
+        return (
+          <article key={product.id || idx} className="product-card">
+            {product.imageUrl ? (
+              <div className="product-image">
+                <Image
+                  src={product.imageUrl}
+                  alt={pName}
+                  width={300}
+                  height={200}
+                  unoptimized
+                />
+              </div>
+            ) : (
+              <div className="product-image no-image">No image available</div>
+            )}
+            <span className="badge">{pCat}</span>
+            <h2 className="section-title">{pName}</h2>
+            <p className="muted">{pDesc}</p>
+            <div className="price-tag">
+              ${(Number.isFinite(pPrice) ? pPrice : 0).toFixed(2)}
+              {product.featured ? <span style={{ fontSize: "0.8rem", color: "#34d399", marginLeft: "0.5rem" }}>· Chef Pick</span> : null}
+            </div>
+          </article>
+        );
+      })}
+    </div>
   );
 }
