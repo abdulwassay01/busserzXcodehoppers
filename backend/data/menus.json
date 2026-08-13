@@ -2,28 +2,290 @@
   "data": [
     {
       "id": "0930ba08-c149-49d3-a0e3-22b66200fcd8",
-      "title": "Breakfast",
-      "description": "healthy and delicious breakfast",
-      "imageUrl": "https://assets.busserz.com/pk00001002/5f14179c-27c3-42ec-92d1-43001aed44f4",
-      "items": [
+      "name": {
+        "system": "Breakfast",
+        "public": {
+          "en": null
+        },
+        "short": {
+          "en": null
+        }
+      },
+      "description": {
+        "public": {
+          "full": {
+            "en": "healthy and delicious breakfast"
+          },
+          "short": {
+            "en": "healthy and delicious breakfast"
+          }
+        }
+      },
+      "price": 20,
+      "slug": "breakfast",
+      "assets": [
+        {
+          "id": "5f14179c-27c3-42ec-92d1-43001aed44f4",
+          "name": {
+            "system": "juiceandsand",
+            "public": {
+              "en": null
+            },
+            "short": {
+              "en": null
+            }
+          },
+          "description": {
+            "alt": {
+              "en": null
+            },
+            "public": {
+              "full": {
+                "en": null
+              },
+              "short": {
+                "en": null
+              }
+            }
+          },
+          "type": "FILE",
+          "media": "IMAGE",
+          "tags": [],
+          "categories": [],
+          "url": "https://assets.busserz.com/pk00001002/5f14179c-27c3-42ec-92d1-43001aed44f4",
+          "metadata": {}
+        }
+      ],
+      "tags": [],
+      "categories": [
+        {
+          "id": "45dcc46d-e34d-4d46-9aaf-86349472289c",
+          "name": {
+            "system": "Breakfast",
+            "public": {
+              "en": null
+            },
+            "short": {
+              "en": null
+            }
+          },
+          "description": {
+            "public": {
+              "full": {
+                "en": null
+              },
+              "short": {
+                "en": null
+              }
+            }
+          },
+          "assets": []
+        }
+      ],
+      "metadata": {},
+      "status": "DRAFT",
+      "products": [
         {
           "id": "0cd792e6-af65-42d5-b5b7-b7e0d514e571",
-          "name": "Sandwich",
-          "details": "Sandwich",
+          "name": {
+            "system": "Sandwich",
+            "public": {
+              "en": "Sandwich"
+            },
+            "short": {
+              "en": "Sandwich"
+            }
+          },
+          "description": {
+            "public": {
+              "full": {
+                "en": "Sandwich"
+              },
+              "short": {
+                "en": "Sandwich"
+              }
+            }
+          },
           "price": 12,
-          "imageUrl": "https://assets.busserz.com/pk00001002/46136cd8-1805-4720-ae26-27932030a6d0"
+          "slug": "sandwich",
+          "assets": [
+            {
+              "id": "46136cd8-1805-4720-ae26-27932030a6d0",
+              "name": {
+                "system": "sandwich",
+                "public": {
+                  "en": null
+                },
+                "short": {
+                  "en": null
+                }
+              },
+              "description": {
+                "alt": {
+                  "en": null
+                },
+                "public": {
+                  "full": {
+                    "en": null
+                  },
+                  "short": {
+                    "en": null
+                  }
+                }
+              },
+              "type": "FILE",
+              "media": "IMAGE",
+              "tags": [],
+              "categories": [
+                {
+                  "id": "45dcc46d-e34d-4d46-9aaf-86349472289c",
+                  "name": {
+                    "system": "Breakfast",
+                    "public": {
+                      "en": null
+                    },
+                    "short": {
+                      "en": null
+                    }
+                  },
+                  "description": {
+                    "public": {
+                      "full": {
+                        "en": null
+                      },
+                      "short": {
+                        "en": null
+                      }
+                    }
+                  },
+                  "assets": []
+                }
+              ],
+              "url": "https://assets.busserz.com/pk00001002/46136cd8-1805-4720-ae26-27932030a6d0",
+              "metadata": {}
+            }
+          ],
+          "tags": [],
+          "categories": [
+            {
+              "id": "45dcc46d-e34d-4d46-9aaf-86349472289c",
+              "name": {
+                "system": "Breakfast",
+                "public": {
+                  "en": null
+                },
+                "short": {
+                  "en": null
+                }
+              },
+              "description": {
+                "public": {
+                  "full": {
+                    "en": null
+                  },
+                  "short": {
+                    "en": null
+                  }
+                }
+              },
+              "assets": []
+            }
+          ],
+          "preparation": {
+            "notes": null
+          },
+          "metadata": {},
+          "availability": "AVAILABLE",
+          "active": true,
+          "overrides": {
+            "price": null
+          }
         },
         {
           "id": "111c32d3-431e-4ca3-a465-3f2acafab799",
-          "name": "Orange Juice",
-          "details": "Chef recommendation",
+          "name": {
+            "system": "Juice",
+            "public": {
+              "en": "Orange Juice"
+            },
+            "short": {
+              "en": "Juice"
+            }
+          },
+          "description": {
+            "public": {
+              "full": {
+                "en": null
+              },
+              "short": {
+                "en": null
+              }
+            }
+          },
           "price": 12,
-          "imageUrl": "https://assets.busserz.com/pk00001002/5ff67362-0b70-4518-9c36-c383ede1a00a"
+          "slug": "juice",
+          "assets": [
+            {
+              "id": "5ff67362-0b70-4518-9c36-c383ede1a00a",
+              "name": {
+                "system": "juice",
+                "public": {
+                  "en": null
+                },
+                "short": {
+                  "en": null
+                }
+              },
+              "description": {
+                "alt": {
+                  "en": null
+                },
+                "public": {
+                  "full": {
+                    "en": null
+                  },
+                  "short": {
+                    "en": null
+                  }
+                }
+              },
+              "type": "FILE",
+              "media": "IMAGE",
+              "tags": [],
+              "categories": [],
+              "url": "https://assets.busserz.com/pk00001002/5ff67362-0b70-4518-9c36-c383ede1a00a",
+              "metadata": {}
+            }
+          ],
+          "tags": [
+            {
+              "id": "c447b8da-1b3a-4b38-8b2a-b90848129b53",
+              "name": {
+                "system": "Juice",
+                "public": {
+                  "en": null
+                },
+                "short": {
+                  "en": null
+                }
+              }
+            }
+          ],
+          "categories": [],
+          "preparation": {
+            "notes": null
+          },
+          "metadata": {},
+          "availability": "AVAILABLE",
+          "active": true,
+          "overrides": {
+            "price": null
+          }
         }
       ]
     }
   ],
-  "savedAt": "2026-08-07T08:08:49.606Z",
+  "savedAt": "2026-08-13T12:03:57.461Z",
   "apiKey": "Y2tqOjpuAUmjo9Gqsayc1o1KKVSfkXsq",
   "spaceId": "PK00001002"
 }
