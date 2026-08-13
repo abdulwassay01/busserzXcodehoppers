@@ -6,6 +6,8 @@ export type MenuProduct = {
   imageUrl?: string;
 };
 
+export type { Product } from "./product";
+
 export type MenuSection = {
   id: string;
   title: string;

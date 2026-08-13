@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import type { Product } from "@/types/menu";
+import type { Product } from "@/types/product";
 
 type BackendPayload = {
   key?: string;
