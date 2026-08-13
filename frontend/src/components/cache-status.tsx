@@ -29,8 +29,8 @@ export function CacheStatusControl({
     const apiBase = getBackendApiBase();
     try {
       const [productsResponse, menuResponse] = await Promise.all([
-        fetch(`${apiBase}/api/data?key=products`, { cache: "no-store" }),
-        fetch(`${apiBase}/api/data?key=menus`, { cache: "no-store" }),
+        fetch(`${apiBase}?key=products`, { cache: "no-store" }),
+        fetch(`${apiBase}?key=menus`, { cache: "no-store" }),
       ]);
 
       const productsPayload = productsResponse.ok ? await productsResponse.json() : null;
@@ -65,13 +65,13 @@ export function CacheStatusControl({
   const handleClearCache = async () => {
     const apiBase = getBackendApiBase();
     if (cacheKey === "products") {
-      await fetch(`${apiBase}/api/data?key=products`, { method: "DELETE" });
+      await fetch(`${apiBase}?key=products`, { method: "DELETE" });
     } else if (cacheKey === "menu") {
-      await fetch(`${apiBase}/api/data?key=menus`, { method: "DELETE" });
+      await fetch(`${apiBase}?key=menus`, { method: "DELETE" });
     } else {
       await Promise.all([
-        fetch(`${apiBase}/api/data?key=products`, { method: "DELETE" }),
-        fetch(`${apiBase}/api/data?key=menus`, { method: "DELETE" }),
+        fetch(`${apiBase}?key=products`, { method: "DELETE" }),
+        fetch(`${apiBase}?key=menus`, { method: "DELETE" }),
       ]);
     }
 

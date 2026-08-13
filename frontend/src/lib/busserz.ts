@@ -248,7 +248,7 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
   const baseUrl = getBackendApiBase();
   try {
     // 1. Check whether backend reports a change for this key.
-    const changedResp = await fetch(`${baseUrl}/api/changed?key=${key}`, {
+    const changedResp = await fetch(`${baseUrl}?key=${key}&check=changed`, {
       cache: 'no-store',
     }).catch(() => null);
 
@@ -261,7 +261,7 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
     }
 
     // 2. Fetch stored backend JSON data
-    const response = await fetch(`${baseUrl}/api/data?key=${key}`, {
+    const response = await fetch(`${baseUrl}?key=${key}`, {
       cache: 'no-store',
     });
     const cType = response.headers.get("content-type") || "";
@@ -301,7 +301,7 @@ async function writePersistedData<T>(key: string, data: T): Promise<void> {
   const baseUrl = getBackendApiBase();
 
   try {
-    await fetch(`${baseUrl}/api/data`, {
+    await fetch(`${baseUrl}?key=${key}`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -314,10 +314,6 @@ async function writePersistedData<T>(key: string, data: T): Promise<void> {
         } satisfies PersistedEnvelope<T>,
       }),
     });
-    // Clear any change flag after successfully writing persisted data
-    try {
-      await fetch(`${baseUrl}/api/changed?key=${key}`, { method: 'DELETE' });
-    } catch { }
   } catch (error) {
     console.warn(`Backend write error for ${key}:`, error);
   }
