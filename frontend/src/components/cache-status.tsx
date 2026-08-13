@@ -14,8 +14,6 @@ interface BackendCacheState {
 
 import { getBackendApiBase } from "@/lib/busserz";
 
-const BACKEND_API_BASE = getBackendApiBase();
-
 export function CacheStatusControl({
   cacheKey,
   onRefresh,
@@ -28,10 +26,11 @@ export function CacheStatusControl({
   const [isExpanded, setIsExpanded] = useState(false);
 
   const checkCache = useCallback(async () => {
+    const apiBase = getBackendApiBase();
     try {
       const [productsResponse, menuResponse] = await Promise.all([
-        fetch(`${BACKEND_API_BASE}/api/data?key=products`, { cache: "no-store" }),
-        fetch(`${BACKEND_API_BASE}/api/data?key=menus`, { cache: "no-store" }),
+        fetch(`${apiBase}/api/data?key=products`, { cache: "no-store" }),
+        fetch(`${apiBase}/api/data?key=menus`, { cache: "no-store" }),
       ]);
 
       const productsPayload = productsResponse.ok ? await productsResponse.json() : null;
@@ -65,14 +64,15 @@ export function CacheStatusControl({
   const isCached = !!activeKeyInfo;
 
   const handleClearCache = async () => {
+    const apiBase = getBackendApiBase();
     if (cacheKey === "products") {
-      await fetch(`${BACKEND_API_BASE}/api/data?key=products`, { method: "DELETE" });
+      await fetch(`${apiBase}/api/data?key=products`, { method: "DELETE" });
     } else if (cacheKey === "menu") {
-      await fetch(`${BACKEND_API_BASE}/api/data?key=menus`, { method: "DELETE" });
+      await fetch(`${apiBase}/api/data?key=menus`, { method: "DELETE" });
     } else {
       await Promise.all([
-        fetch(`${BACKEND_API_BASE}/api/data?key=products`, { method: "DELETE" }),
-        fetch(`${BACKEND_API_BASE}/api/data?key=menus`, { method: "DELETE" }),
+        fetch(`${apiBase}/api/data?key=products`, { method: "DELETE" }),
+        fetch(`${apiBase}/api/data?key=menus`, { method: "DELETE" }),
       ]);
     }
 

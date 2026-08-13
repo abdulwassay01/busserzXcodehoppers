@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { MenuSection } from "@/types/menu";
+import { getBackendApiBase } from "@/lib/busserz";
 
 type BackendPayload = {
   key?: string;
@@ -13,10 +14,6 @@ type BackendPayload = {
     spaceId?: string;
   } | null;
 };
-
-import { getBackendApiBase } from "@/lib/busserz";
-
-const BACKEND_API_BASE = getBackendApiBase();
 
 function safeString(value: unknown, fallback: string = ""): string {
   if (typeof value === "string") return value;
@@ -47,7 +44,8 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
 
     const loadMenus = async () => {
       try {
-        const response = await fetch(`${BACKEND_API_BASE}/api/data?key=menus`, { cache: "no-store" });
+        const apiBase = getBackendApiBase();
+        const response = await fetch(`${apiBase}/api/data?key=menus`, { cache: "no-store" });
         if (response.ok) {
           const payload = (await response.json()) as BackendPayload;
           const storedData = payload?.data;

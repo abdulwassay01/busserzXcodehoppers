@@ -24,7 +24,6 @@ export function getBackendApiBase(): string {
   return process.env.BACKEND_API_BASE ?? "http://localhost:4000";
 }
 
-const BACKEND_API_BASE = getBackendApiBase();
 const DEFAULT_TTL_MS = 5 * 60 * 1000;
 const SHOULD_SKIP_BACKEND_PERSISTENCE = process.env.NEXT_PHASE === "phase-production-build";
 
@@ -224,9 +223,10 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
   if (SHOULD_SKIP_BACKEND_PERSISTENCE) {
     return null;
   }
+  const baseUrl = getBackendApiBase();
   try {
     // 1. Check whether backend reports a change for this key.
-    const changedResp = await fetch(`${BACKEND_API_BASE}/api/changed?key=${key}`, {
+    const changedResp = await fetch(`${baseUrl}/api/changed?key=${key}`, {
       cache: 'no-store',
     }).catch(() => null);
 
@@ -239,7 +239,7 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
     }
 
     // 2. Fetch stored backend JSON data
-    const response = await fetch(`${BACKEND_API_BASE}/api/data?key=${key}`, {
+    const response = await fetch(`${baseUrl}/api/data?key=${key}`, {
       cache: 'no-store',
     });
     if (!response.ok) {
@@ -275,9 +275,10 @@ async function writePersistedData<T>(key: string, data: T): Promise<void> {
   if (SHOULD_SKIP_BACKEND_PERSISTENCE) {
     return;
   }
+  const baseUrl = getBackendApiBase();
 
   try {
-    await fetch(`${BACKEND_API_BASE}/api/data`, {
+    await fetch(`${baseUrl}/api/data`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify({
@@ -292,7 +293,7 @@ async function writePersistedData<T>(key: string, data: T): Promise<void> {
     });
     // Clear any change flag after successfully writing persisted data
     try {
-      await fetch(`${BACKEND_API_BASE}/api/changed?key=${key}`, { method: 'DELETE' });
+      await fetch(`${baseUrl}/api/changed?key=${key}`, { method: 'DELETE' });
     } catch { }
   } catch (error) {
     console.warn(`Backend write error for ${key}:`, error);
@@ -303,9 +304,10 @@ async function clearPersistedData(key: string): Promise<void> {
   if (SHOULD_SKIP_BACKEND_PERSISTENCE) {
     return;
   }
+  const baseUrl = getBackendApiBase();
 
   try {
-    await fetch(`${BACKEND_API_BASE}/api/data?key=${key}`, {
+    await fetch(`${baseUrl}/api/data?key=${key}`, {
       method: "DELETE",
     });
   } catch (error) {
