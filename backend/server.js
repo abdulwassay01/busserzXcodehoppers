@@ -100,7 +100,7 @@ function fetchFromBusserz(pathSegment) {
 
 // Fetch fresh data from Busserz API and save to backend/data/*.json
 async function syncBusserzData(targetKey = null) {
-  console.log(`[BUSSERZ SYNC] Alert/Initial fetch: Calling Busserz API for ${targetKey || 'all'}...`);
+  console.log(`[BUSSERZ SYNC] Fetching fresh data directly from Busserz API for ${targetKey || 'all'}...`);
   const timestamp = new Date().toISOString();
 
   if (!targetKey || targetKey === 'products' || targetKey.includes('product')) {
@@ -154,73 +154,13 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // GET /api/data?key=products or key=menus
-  if (req.method === 'GET' && (url.pathname === '/api/data' || url.pathname === '/busserz/api/data')) {
-    const key = url.searchParams.get('key');
-    if (!key) {
-      sendJson(res, 400, { error: 'Missing key' });
-      return;
-    }
+  // Extract key parameter from query or pathname
+  const key = url.searchParams.get('key') || 
+              (url.pathname.includes('product') ? 'products' : 
+               url.pathname.includes('menu') ? 'menus' : null);
 
-    const filePath = getFilePath(key);
-    const flag = readChangeFlag(key);
-    let data = readJson(filePath, null);
-
-    // Rule 1: If JSON does not exist OR webhook flagged a change -> Fetch from Busserz API
-    if (!data || (flag && flag.changed)) {
-      const reason = !data ? 'No JSON file found' : 'Webhook change alert received';
-      console.log(`[BUSSERZ] ${reason} for key=${key}. Calling Busserz API...`);
-      syncBusserzData(key).then(() => {
-        data = readJson(filePath, null);
-        sendJson(res, 200, { key, data });
-      });
-      return;
-    }
-
-    // Rule 2: JSON exists and no change alert -> Return cached JSON directly (NO API CALL)
-    sendJson(res, 200, { key, data });
-    return;
-  }
-
-  if (req.method === 'GET' && (url.pathname === '/api/changed' || url.pathname === '/busserz/api/changed')) {
-    const key = url.searchParams.get('key');
-    if (!key) {
-      sendJson(res, 400, { error: 'Missing key' });
-      return;
-    }
-
-    const flag = readChangeFlag(key);
-    sendJson(res, 200, { key, changed: !!(flag && flag.changed), at: flag?.at ?? null });
-    return;
-  }
-
-  if (req.method === 'POST' && (url.pathname === '/api/data' || url.pathname === '/busserz/api/data')) {
-    let body = '';
-    req.on('data', (chunk) => {
-      body += chunk;
-    });
-    req.on('end', () => {
-      try {
-        const payload = JSON.parse(body || '{}');
-        const key = payload.key;
-        const data = payload.data;
-        if (!key || data === undefined) {
-          sendJson(res, 400, { error: 'Missing key or data' });
-          return;
-        }
-        writeJson(getFilePath(key), data);
-        clearChangeFlag(key);
-        sendJson(res, 200, { ok: true, key, storedAt: new Date().toISOString() });
-      } catch (error) {
-        sendJson(res, 400, { error: 'Invalid JSON body' });
-      }
-    });
-    return;
-  }
-
-  // WEBHOOK ALERT ENDPOINT:
-  // Triggered by Busserz when product or menu updates occur!
-  if (url.pathname.includes('/webhook') || url.pathname.includes('/sync')) {
+  // WEBHOOK ENDPOINT (POST /webhook or POST /api/webhook)
+  if (url.pathname.includes('webhook') || url.pathname.includes('sync')) {
     let body = '';
     req.on('data', (chunk) => (body += chunk));
     req.on('end', async () => {
@@ -232,9 +172,8 @@ const server = http.createServer((req, res) => {
         }
       } catch { }
 
-      console.log(`[BUSSERZ WEBHOOK] Change alert received from Busserz! Re-fetching updated products and menus...`);
+      console.log(`[BUSSERZ WEBHOOK] Alert received from Busserz! Re-fetching updated products/menus...`);
       
-      // Mark change flag so backend knows an update occurred
       if (targetKey) {
         setChangeFlag(targetKey, true);
       } else {
@@ -248,14 +187,65 @@ const server = http.createServer((req, res) => {
         timestamp: new Date().toISOString()
       });
 
-      // Instantly re-fetch fresh data from Busserz API and update backend/data/*.json
       await syncBusserzData(targetKey);
     });
     return;
   }
 
-  if (req.method === 'DELETE' && (url.pathname === '/api/data' || url.pathname === '/busserz/api/data')) {
-    const key = url.searchParams.get('key');
+  // GET DATA: Supports http://localhost:4000?key=products, /api/data?key=products, /busserz/api/data?key=products, etc.
+  if (req.method === 'GET' && (key || url.pathname === '/' || url.pathname.includes('data'))) {
+    if (!key) {
+      sendJson(res, 400, { error: 'Missing key parameter' });
+      return;
+    }
+
+    const filePath = getFilePath(key);
+    const flag = readChangeFlag(key);
+    let data = readJson(filePath, null);
+
+    // Rule 1: If JSON file does not exist OR webhook flagged a change -> Fetch from Busserz API
+    if (!data || (flag && flag.changed)) {
+      const reason = !data ? 'No JSON file found' : 'Webhook change alert received';
+      console.log(`[BUSSERZ] ${reason} for key=${key}. Calling Busserz API...`);
+      syncBusserzData(key).then(() => {
+        data = readJson(filePath, null);
+        sendJson(res, 200, { key, data });
+      });
+      return;
+    }
+
+    // Rule 2: JSON exists and no change alert -> Serve cached JSON directly (0 external API calls)
+    sendJson(res, 200, { key, data });
+    return;
+  }
+
+  // POST DATA: Save JSON directly
+  if (req.method === 'POST' && (key || url.pathname === '/' || url.pathname.includes('data'))) {
+    let body = '';
+    req.on('data', (chunk) => {
+      body += chunk;
+    });
+    req.on('end', () => {
+      try {
+        const payload = JSON.parse(body || '{}');
+        const targetKey = payload.key || key;
+        const data = payload.data;
+        if (!targetKey || data === undefined) {
+          sendJson(res, 400, { error: 'Missing key or data' });
+          return;
+        }
+        writeJson(getFilePath(targetKey), data);
+        clearChangeFlag(targetKey);
+        sendJson(res, 200, { ok: true, key: targetKey, storedAt: new Date().toISOString() });
+      } catch (error) {
+        sendJson(res, 400, { error: 'Invalid JSON body' });
+      }
+    });
+    return;
+  }
+
+  // DELETE DATA: Purge JSON file
+  if (req.method === 'DELETE' && (key || url.pathname === '/' || url.pathname.includes('data'))) {
     if (!key) {
       sendJson(res, 400, { error: 'Missing key' });
       return;
@@ -266,18 +256,8 @@ const server = http.createServer((req, res) => {
       fs.unlinkSync(filePath);
     } catch { }
     clearChangeFlag(key);
-    sendJson(res, 200, { ok: true, key });
-    return;
-  }
-
-  if (req.method === 'DELETE' && (url.pathname === '/api/changed' || url.pathname === '/busserz/api/changed')) {
-    const key = url.searchParams.get('key');
-    if (!key) {
-      sendJson(res, 400, { error: 'Missing key' });
-      return;
-    }
-    clearChangeFlag(key);
-    sendJson(res, 200, { ok: true, key });
+    console.log(`[BUSSERZ] Deleted backend/data/${key}.json.`);
+    sendJson(res, 200, { ok: true, key, message: `Deleted ${key}.json cache.` });
     return;
   }
 
@@ -286,13 +266,12 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, () => {
   console.log(`Backend listening on http://localhost:${port}`);
-  // Perform initial auto-sync if JSON files do not exist
   const productsExist = fs.existsSync(getFilePath('products'));
   const menusExist = fs.existsSync(getFilePath('menus'));
   if (!productsExist || !menusExist) {
     console.log(`[BUSSERZ] Initial startup: JSON files missing. Fetching initial data from Busserz API...`);
     syncBusserzData();
   } else {
-    console.log(`[BUSSERZ] Startup: Existing JSON files found in backend/data/. No API calls needed.`);
+    console.log(`[BUSSERZ] Startup: Existing JSON files found in backend/data/. No external API calls needed.`);
   }
 });
