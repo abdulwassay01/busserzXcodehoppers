@@ -15,8 +15,9 @@ const BUSSERZ_API_BASE = process.env.BUSSERZ_API_BASE ?? "https://data.busserz.c
 const BUSSERZ_API_KEY = process.env.BUSSERZ_API_KEY ?? "Y2tqOjpuAUmjo9Gqsayc1o1KKVSfkXsq";
 const BUSSERZ_SPACE_ID = process.env.BUSSERZ_SPACE_ID ?? "PK00001002";
 export function getBackendApiBase(): string {
-  if (process.env.NEXT_PUBLIC_BACKEND_API_BASE) {
-    return process.env.NEXT_PUBLIC_BACKEND_API_BASE;
+  const envUrl = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
+  if (envUrl && envUrl.trim() !== "" && !envUrl.includes("localhost")) {
+    return envUrl;
   }
   if (typeof window !== "undefined") {
     return `${window.location.protocol}//${window.location.hostname}:4000`;
