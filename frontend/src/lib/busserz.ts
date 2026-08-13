@@ -14,7 +14,17 @@ export type PersistedEnvelope<T> = {
 const BUSSERZ_API_BASE = process.env.BUSSERZ_API_BASE ?? "https://data.busserz.com/v2";
 const BUSSERZ_API_KEY = process.env.BUSSERZ_API_KEY ?? "Y2tqOjpuAUmjo9Gqsayc1o1KKVSfkXsq";
 const BUSSERZ_SPACE_ID = process.env.BUSSERZ_SPACE_ID ?? "PK00001002";
-const BACKEND_API_BASE = process.env.NEXT_PUBLIC_BACKEND_API_BASE ?? process.env.BACKEND_API_BASE ?? "http://localhost:4000";
+export function getBackendApiBase(): string {
+  if (process.env.NEXT_PUBLIC_BACKEND_API_BASE) {
+    return process.env.NEXT_PUBLIC_BACKEND_API_BASE;
+  }
+  if (typeof window !== "undefined") {
+    return `${window.location.protocol}//${window.location.hostname}:4000`;
+  }
+  return process.env.BACKEND_API_BASE ?? "http://localhost:4000";
+}
+
+const BACKEND_API_BASE = getBackendApiBase();
 const DEFAULT_TTL_MS = 5 * 60 * 1000;
 const SHOULD_SKIP_BACKEND_PERSISTENCE = process.env.NEXT_PHASE === "phase-production-build";
 

@@ -12,7 +12,9 @@ interface BackendCacheState {
   menu: BackendCacheInfo | null;
 }
 
-const BACKEND_API_BASE = process.env.NEXT_PUBLIC_BACKEND_API_BASE ?? "http://localhost:4000";
+import { getBackendApiBase } from "@/lib/busserz";
+
+const BACKEND_API_BASE = getBackendApiBase();
 
 export function CacheStatusControl({
   cacheKey,
