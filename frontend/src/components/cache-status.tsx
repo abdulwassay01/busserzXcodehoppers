@@ -50,8 +50,7 @@ export function CacheStatusControl({
             }
           : null,
       });
-    } catch (error) {
-      console.warn("Failed to read backend cache status:", error);
+    } catch {
       setCacheInfo({ products: null, menu: null });
     }
   }, []);

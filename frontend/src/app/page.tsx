@@ -47,7 +47,7 @@ export default async function Home() {
             <div className="hero-art-card">
               <div className="hero-image-container">
                 <Image
-                  src="/hero_signature_dish.png"
+                  src="/busserz/hero_signature_dish.png"
                   alt="Flame Bowl Signature Dish"
                   width={600}
                   height={400}

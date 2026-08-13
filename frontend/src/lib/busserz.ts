@@ -20,7 +20,8 @@ export function getBackendApiBase(): string {
     return envUrl;
   }
   if (typeof window !== "undefined") {
-    return `${window.location.protocol}//${window.location.hostname}:4000`;
+    const basePath = window.location.pathname.startsWith("/busserz") ? "/busserz" : "";
+    return `${window.location.origin}${basePath}`;
   }
   return process.env.BACKEND_API_BASE ?? "http://localhost:4000";
 }
