@@ -45,8 +45,16 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
     const loadProducts = async () => {
       try {
         const apiBase = getBackendApiBase();
-        const response = await fetch(`${apiBase}/api/data?key=products`, { cache: "no-store" });
-        if (response.ok) {
+        let response = await fetch(`${apiBase}/api/data?key=products`, { cache: "no-store" }).catch(() => null);
+
+        if (!response || !response.ok) {
+          if (typeof window !== "undefined") {
+            const fallbackBase = window.location.origin;
+            response = await fetch(`${fallbackBase}/api/data?key=products`, { cache: "no-store" }).catch(() => null);
+          }
+        }
+
+        if (response && response.ok) {
           const payload = (await response.json()) as BackendPayload;
           const storedData = payload?.data;
           if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
