@@ -92,19 +92,40 @@ function resolveCategory(entity: RawEntity): string {
 }
 
 function resolveImageUrl(entity: RawEntity): string | undefined {
-  const assets = entity.assets;
-  if (!Array.isArray(assets) || assets.length === 0) {
-    return undefined;
+  if (!entity || typeof entity !== "object") return undefined;
+
+  // Direct string or object properties
+  for (const key of ["imageUrl", "image_url", "image", "thumbnail", "cover", "picture"]) {
+    const val = entity[key];
+    if (typeof val === "string" && val.trim() !== "") return val;
+    if (val && typeof val === "object") {
+      const obj = val as Record<string, unknown>;
+      if (typeof obj.url === "string" && obj.url.trim() !== "") return obj.url;
+    }
   }
 
-  const firstAsset = assets[0];
-  if (!firstAsset || typeof firstAsset !== "object") {
-    return undefined;
+  // Array properties: assets, media, images
+  for (const key of ["assets", "media", "images"]) {
+    const arr = entity[key];
+    if (Array.isArray(arr) && arr.length > 0) {
+      for (const item of arr) {
+        if (typeof item === "string" && item.trim() !== "") return item;
+        if (item && typeof item === "object") {
+          const record = item as Record<string, unknown>;
+          if (typeof record.url === "string" && record.url.trim() !== "") return record.url;
+          if (typeof record.src === "string" && record.src.trim() !== "") return record.src;
+          if (typeof record.path === "string" && record.path.trim() !== "") return record.path;
+        }
+      }
+    }
   }
 
-  const assetRecord = firstAsset as RawEntity;
-  const url = assetRecord.url;
-  return typeof url === "string" ? url : undefined;
+  // Internal property
+  if (entity.internal && typeof entity.internal === "object") {
+    return resolveImageUrl(entity.internal as RawEntity);
+  }
+
+  return undefined;
 }
 
 export function normalizeProduct(item: RawEntity): Product {
