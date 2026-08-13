@@ -45,9 +45,10 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
       try {
         const candidates: string[] = [];
         if (typeof window !== "undefined") {
+          candidates.push(`http://${window.location.hostname}:4000?key=products`);
+          candidates.push(`${window.location.origin}/busserz?key=products`);
+          candidates.push(`${window.location.origin}?key=products`);
           candidates.push(`http://${window.location.hostname}:4000/api/data?key=products`);
-          candidates.push(`${window.location.origin}/busserz/api/data?key=products`);
-          candidates.push(`${window.location.origin}/api/data?key=products`);
         }
 
         for (const url of candidates) {

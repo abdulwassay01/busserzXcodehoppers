@@ -39,15 +39,15 @@ export function CacheStatusControl({
       setCacheInfo({
         products: productsPayload?.data?.data?.length
           ? {
-              timestamp: Date.parse(productsPayload.data.savedAt ?? "") || Date.now(),
-              count: productsPayload.data.data.length,
-            }
+            timestamp: Date.parse(productsPayload.data.savedAt ?? "") || Date.now(),
+            count: productsPayload.data.data.length,
+          }
           : null,
         menu: menuPayload?.data?.data?.length
           ? {
-              timestamp: Date.parse(menuPayload.data.savedAt ?? "") || Date.now(),
-              count: menuPayload.data.data.length,
-            }
+            timestamp: Date.parse(menuPayload.data.savedAt ?? "") || Date.now(),
+            count: menuPayload.data.data.length,
+          }
           : null,
       });
     } catch {

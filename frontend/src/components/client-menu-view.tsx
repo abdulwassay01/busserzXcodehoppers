@@ -45,9 +45,10 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
       try {
         const candidates: string[] = [];
         if (typeof window !== "undefined") {
+          candidates.push(`http://${window.location.hostname}:4000?key=menus`);
+          candidates.push(`${window.location.origin}/busserz?key=menus`);
+          candidates.push(`${window.location.origin}?key=menus`);
           candidates.push(`http://${window.location.hostname}:4000/api/data?key=menus`);
-          candidates.push(`${window.location.origin}/busserz/api/data?key=menus`);
-          candidates.push(`${window.location.origin}/api/data?key=menus`);
         }
 
         for (const url of candidates) {
