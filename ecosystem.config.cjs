@@ -20,8 +20,8 @@ module.exports = {
     },
     {
       name: "busserz-frontend",
-      script: "npm",
-      args: "start",
+      script: "npx",
+      args: "serve -s out -p 3000",
       cwd: "./frontend",
       instances: 1,
       exec_mode: "fork",
@@ -30,11 +30,7 @@ module.exports = {
       max_memory_restart: "1G",
       env: {
         NODE_ENV: "production",
-        PORT: 3000,
-        BUSSERZ_API_BASE: "https://data.busserz.com/v2",
-        BUSSERZ_API_KEY: "Y2tqOjpuAUmjo9Gqsayc1o1KKVSfkXsq",
-        BUSSERZ_SPACE_ID: "PK00001002",
-        NEXT_PUBLIC_BACKEND_API_BASE: "http://localhost:4000"
+        PORT: 3000
       },
       out_file: "./logs/frontend-out.log",
       error_file: "./logs/frontend-err.log",
