@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { Product } from "@/types/product";
+import { normalizeProduct, type RawEntity } from "@/lib/busserz";
 
 type BackendPayload = {
   key?: string;
   data?: {
-    data?: Product[];
+    data?: RawEntity[];
     savedAt?: string;
     apiKey?: string;
     spaceId?: string;
@@ -31,11 +32,24 @@ function safeString(value: unknown, fallback: string = ""): string {
   return fallback;
 }
 
+function processProductData(dataList: unknown[]): Product[] {
+  return dataList
+    .filter((item): item is RawEntity => !!item && typeof item === "object")
+    .map((item) => {
+      if (typeof item.name === "string" && typeof item.category === "string") {
+        return item as unknown as Product;
+      }
+      return normalizeProduct(item);
+    });
+}
+
 export function ClientProductsView({ initialProducts }: { initialProducts: Product[] }) {
-  const [products, setProducts] = useState<Product[]>(initialProducts);
+  const [products, setProducts] = useState<Product[]>(() => processProductData(initialProducts ?? []));
 
   useEffect(() => {
-    setProducts(initialProducts);
+    if (Array.isArray(initialProducts) && initialProducts.length > 0) {
+      setProducts(processProductData(initialProducts));
+    }
   }, [initialProducts]);
 
   useEffect(() => {
@@ -59,7 +73,7 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
               const payload = (await res.json()) as BackendPayload;
               const storedData = payload?.data;
               if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
-                setProducts(storedData.data);
+                setProducts(processProductData(storedData.data));
                 return;
               }
             }
@@ -72,7 +86,7 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
       }
 
       if (active && initialProducts?.length) {
-        setProducts(initialProducts);
+        setProducts(processProductData(initialProducts));
       }
     };
 

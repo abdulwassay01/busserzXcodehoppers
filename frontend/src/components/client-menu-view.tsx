@@ -3,11 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { MenuSection } from "@/types/menu";
+import { normalizeMenuSection, type RawEntity } from "@/lib/busserz";
 
 type BackendPayload = {
   key?: string;
   data?: {
-    data?: MenuSection[];
+    data?: RawEntity[];
     savedAt?: string;
     apiKey?: string;
     spaceId?: string;
@@ -31,11 +32,24 @@ function safeString(value: unknown, fallback: string = ""): string {
   return fallback;
 }
 
+function processMenuData(dataList: unknown[]): MenuSection[] {
+  return dataList
+    .filter((item): item is RawEntity => !!item && typeof item === "object")
+    .map((item) => {
+      if (typeof item.title === "string" && Array.isArray(item.items)) {
+        return item as unknown as MenuSection;
+      }
+      return normalizeMenuSection(item);
+    });
+}
+
 export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }) {
-  const [menus, setMenus] = useState<MenuSection[]>(initialMenus);
+  const [menus, setMenus] = useState<MenuSection[]>(() => processMenuData(initialMenus ?? []));
 
   useEffect(() => {
-    setMenus(initialMenus);
+    if (Array.isArray(initialMenus) && initialMenus.length > 0) {
+      setMenus(processMenuData(initialMenus));
+    }
   }, [initialMenus]);
 
   useEffect(() => {
@@ -59,7 +73,7 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
               const payload = (await res.json()) as BackendPayload;
               const storedData = payload?.data;
               if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
-                setMenus(storedData.data);
+                setMenus(processMenuData(storedData.data));
                 return;
               }
             }
@@ -72,7 +86,7 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
       }
 
       if (active && initialMenus?.length) {
-        setMenus(initialMenus);
+        setMenus(processMenuData(initialMenus));
       }
     };
 

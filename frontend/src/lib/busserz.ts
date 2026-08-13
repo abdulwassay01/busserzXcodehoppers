@@ -2,7 +2,7 @@ import type { MenuSection } from "@/types/menu";
 import type { Product } from "@/types/product";
 import { serverCache } from "@/lib/cache";
 
-type RawEntity = Record<string, unknown>;
+export type RawEntity = Record<string, unknown>;
 
 export type PersistedEnvelope<T> = {
   data: T;
