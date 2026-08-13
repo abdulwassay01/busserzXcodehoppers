@@ -23,7 +23,7 @@ export function SiteHeader() {
         </Link>
         <nav className="main-nav" aria-label="Main navigation">
           {links.map((link) => {
-            const isActive = pathname === link.href;
+            const isActive = pathname === link.href || pathname === `/busserz${link.href}` || (link.href !== "/" && pathname?.startsWith(link.href));
 
             return (
               <Link
