@@ -264,6 +264,16 @@ const server = http.createServer((req, res) => {
   sendJson(res, 404, { error: 'Not found' });
 });
 
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`[BUSSERZ BACKEND ERROR] Port ${port} is already in use by an existing process.`);
+    console.error(`To kill the existing process on port ${port}, run: fuser -k ${port}/tcp`);
+    process.exit(1);
+  } else {
+    console.error(`[BUSSERZ BACKEND ERROR]`, err);
+  }
+});
+
 server.listen(port, () => {
   console.log(`Backend listening on http://localhost:${port}`);
   const productsExist = fs.existsSync(getFilePath('products'));
