@@ -2,8 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import type { Product } from "@/types/product";
-import { getBackendApiBase } from "@/lib/busserz";
+import type { Product } from "@/types/menu";
 
 type BackendPayload = {
   key?: string;
@@ -44,22 +43,27 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
 
     const loadProducts = async () => {
       try {
-        const apiBase = getBackendApiBase();
-        let response = await fetch(`${apiBase}/api/data?key=products`, { cache: "no-store" }).catch(() => null);
-
-        if (!response || !response.ok) {
-          if (typeof window !== "undefined") {
-            const fallbackBase = window.location.origin;
-            response = await fetch(`${fallbackBase}/api/data?key=products`, { cache: "no-store" }).catch(() => null);
-          }
+        const candidates: string[] = [];
+        if (typeof window !== "undefined") {
+          candidates.push(`http://${window.location.hostname}:4000/api/data?key=products`);
+          candidates.push(`${window.location.origin}/busserz/api/data?key=products`);
+          candidates.push(`${window.location.origin}/api/data?key=products`);
         }
 
-        if (response && response.ok) {
-          const payload = (await response.json()) as BackendPayload;
-          const storedData = payload?.data;
-          if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
-            setProducts(storedData.data);
-            return;
+        for (const url of candidates) {
+          try {
+            const res = await fetch(url, { cache: "no-store" });
+            const cType = res.headers.get("content-type") || "";
+            if (res.ok && cType.includes("application/json")) {
+              const payload = (await res.json()) as BackendPayload;
+              const storedData = payload?.data;
+              if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
+                setProducts(storedData.data);
+                return;
+              }
+            }
+          } catch {
+            // try next candidate endpoint
           }
         }
       } catch (error) {
@@ -78,22 +82,22 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
   }, [initialProducts]);
 
   return (
-    <div className="products-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
-      {products.map((product, idx) => {
+    <div className="cards-grid anim-rise-delay" style={{ marginTop: "1.5rem" }}>
+      {products.map((product, pIdx) => {
         const pName = safeString(product.name, "Product");
         const pDesc = safeString(product.description, "No description available.");
         const pCat = safeString(product.category, "General");
         const pPrice = typeof product.price === "number" && Number.isFinite(product.price) ? product.price : Number(product.price ?? 0);
 
         return (
-          <article key={product.id || idx} className="product-card">
+          <article className="product-card" key={product.id || pIdx}>
             {product.imageUrl ? (
               <div className="product-image">
                 <Image
                   src={product.imageUrl}
                   alt={pName}
-                  width={300}
-                  height={200}
+                  width={400}
+                  height={250}
                   unoptimized
                 />
               </div>
@@ -102,11 +106,8 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
             )}
             <span className="badge">{pCat}</span>
             <h2 className="section-title">{pName}</h2>
-            <p className="muted">{pDesc}</p>
-            <div className="price-tag">
-              ${(Number.isFinite(pPrice) ? pPrice : 0).toFixed(2)}
-              {product.featured ? <span style={{ fontSize: "0.8rem", color: "#34d399", marginLeft: "0.5rem" }}>· Chef Pick</span> : null}
-            </div>
+            <p className="muted" style={{ flexGrow: 1 }}>{pDesc}</p>
+            <div className="price-tag">${(Number.isFinite(pPrice) ? pPrice : 0).toFixed(2)}</div>
           </article>
         );
       })}

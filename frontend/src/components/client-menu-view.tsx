@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { MenuSection } from "@/types/menu";
-import { getBackendApiBase } from "@/lib/busserz";
 
 type BackendPayload = {
   key?: string;
@@ -44,22 +43,27 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
 
     const loadMenus = async () => {
       try {
-        const apiBase = getBackendApiBase();
-        let response = await fetch(`${apiBase}/api/data?key=menus`, { cache: "no-store" }).catch(() => null);
-        
-        if (!response || !response.ok) {
-          if (typeof window !== "undefined") {
-            const fallbackBase = window.location.origin;
-            response = await fetch(`${fallbackBase}/api/data?key=menus`, { cache: "no-store" }).catch(() => null);
-          }
+        const candidates: string[] = [];
+        if (typeof window !== "undefined") {
+          candidates.push(`http://${window.location.hostname}:4000/api/data?key=menus`);
+          candidates.push(`${window.location.origin}/busserz/api/data?key=menus`);
+          candidates.push(`${window.location.origin}/api/data?key=menus`);
         }
 
-        if (response && response.ok) {
-          const payload = (await response.json()) as BackendPayload;
-          const storedData = payload?.data;
-          if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
-            setMenus(storedData.data);
-            return;
+        for (const url of candidates) {
+          try {
+            const res = await fetch(url, { cache: "no-store" });
+            const cType = res.headers.get("content-type") || "";
+            if (res.ok && cType.includes("application/json")) {
+              const payload = (await res.json()) as BackendPayload;
+              const storedData = payload?.data;
+              if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
+                setMenus(storedData.data);
+                return;
+              }
+            }
+          } catch {
+            // try next candidate endpoint
           }
         }
       } catch (error) {

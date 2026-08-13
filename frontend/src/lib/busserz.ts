@@ -265,7 +265,8 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
     const response = await fetch(`${baseUrl}/api/data?key=${key}`, {
       cache: 'no-store',
     });
-    if (!response.ok) {
+    const cType = response.headers.get("content-type") || "";
+    if (!response.ok || !cType.includes("application/json")) {
       return null;
     }
 
