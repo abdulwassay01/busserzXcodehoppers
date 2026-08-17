@@ -22,7 +22,7 @@ export function getBackendApiBase(): string {
       return envUrl;
     }
     if (hostname !== "localhost" && hostname !== "127.0.0.1") {
-      return `${origin}/busserz/api/data`;
+      return `${origin}/api/data`;
     }
     return "http://localhost:4000";
   }

@@ -57,23 +57,48 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
 
     const loadMenus = async () => {
       try {
-        const baseUrl = getBackendApiBase();
-        const fetchUrl = baseUrl.includes("?") ? baseUrl : `${baseUrl}?key=menus`;
-        const res = await fetch(fetchUrl, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ key: "menus", action: "get" }),
-          cache: "no-store",
-        }).catch(() => null);
+        const candidates: string[] = [];
+        if (typeof window !== "undefined") {
+          const { hostname, protocol, origin } = window.location;
+          const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+          const envBase = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
+          if (envBase && envBase.trim() !== "" && (!envBase.includes("localhost") || isLocal)) {
+            candidates.push(envBase);
+          }
+          if (!isLocal) {
+            candidates.push(`${origin}/api/data`);
+            candidates.push(`${origin}/busserz/api/data`);
+            candidates.push(`${protocol}//${hostname}:4000`);
+          } else {
+            candidates.push(`http://localhost:4000`);
+          }
+        } else {
+          candidates.push(getBackendApiBase());
+        }
 
-        if (res && res.ok) {
-          const cType = res.headers.get("content-type") || "";
-          if (cType.includes("application/json")) {
-            const payload = (await res.json().catch(() => null)) as BackendPayload | null;
-            const storedData = payload?.data;
-            if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
-              setMenus(processMenuData(storedData.data));
+        for (const baseUrl of candidates) {
+          try {
+            const fetchUrl = baseUrl.includes("?") ? baseUrl : `${baseUrl}?key=menus`;
+            const res = await fetch(fetchUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ key: "menus", action: "get" }),
+              cache: "no-store",
+            }).catch(() => null);
+
+            if (res && res.ok) {
+              const cType = res.headers.get("content-type") || "";
+              if (cType.includes("application/json")) {
+                const payload = (await res.json().catch(() => null)) as BackendPayload | null;
+                const storedData = payload?.data;
+                if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
+                  setMenus(processMenuData(storedData.data));
+                  return;
+                }
+              }
             }
+          } catch {
+            // try next candidate
           }
         }
       } catch (error) {
