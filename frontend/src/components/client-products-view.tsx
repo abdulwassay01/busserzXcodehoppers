@@ -66,9 +66,9 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
             candidates.push(envBase);
           }
           if (!isLocal) {
-            candidates.push(`${protocol}//${hostname}:4000`);
             candidates.push(`${origin}/busserz/api/data`);
             candidates.push(`${origin}/api/data`);
+            candidates.push(`${protocol}//${hostname}:4000`);
           } else {
             candidates.push(`http://localhost:4000`);
           }

@@ -16,13 +16,13 @@ const BUSSERZ_API_KEY = process.env.BUSSERZ_API_KEY ?? "Y2tqOjpuAUmjo9Gqsayc1o1K
 const BUSSERZ_SPACE_ID = process.env.BUSSERZ_SPACE_ID ?? "PK00001002";
 export function getBackendApiBase(): string {
   if (typeof window !== "undefined") {
-    const { hostname, protocol } = window.location;
+    const { hostname, origin } = window.location;
     const envUrl = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
     if (envUrl && envUrl.trim() !== "" && !envUrl.includes("localhost")) {
       return envUrl;
     }
     if (hostname !== "localhost" && hostname !== "127.0.0.1") {
-      return `${protocol}//${hostname}:4000`;
+      return `${origin}/busserz/api/data`;
     }
     return "http://localhost:4000";
   }
