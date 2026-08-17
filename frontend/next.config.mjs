@@ -1,13 +1,14 @@
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "/busserz";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  ...(process.env.NEXT_PUBLIC_STATIC_EXPORT === "true" ? { output: "export" } : {}),
+  output: "export",
   trailingSlash: true,
   images: {
     unoptimized: true,
   },
-  ...(basePath ? { basePath, assetPrefix: basePath } : {}),
+  basePath,
+  assetPrefix: basePath,
 };
 
 export default nextConfig;
