@@ -58,16 +58,20 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
     const loadMenus = async () => {
       try {
         const candidates: string[] = [];
-        const envBase = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
-        if (envBase && envBase.trim() !== "") {
-          candidates.push(envBase);
-        }
         if (typeof window !== "undefined") {
           const { hostname, protocol, origin } = window.location;
-          candidates.push(`${protocol}//${hostname}:4000`);
-          candidates.push(`${origin}/busserz/api/data`);
-          candidates.push(`${origin}/api/data`);
-          candidates.push(`${origin}/busserz`);
+          const isLocal = hostname === "localhost" || hostname === "127.0.0.1";
+          const envBase = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
+          if (envBase && envBase.trim() !== "" && (!envBase.includes("localhost") || isLocal)) {
+            candidates.push(envBase);
+          }
+          if (!isLocal) {
+            candidates.push(`${protocol}//${hostname}:4000`);
+            candidates.push(`${origin}/busserz/api/data`);
+            candidates.push(`${origin}/api/data`);
+          } else {
+            candidates.push(`http://localhost:4000`);
+          }
         }
 
         for (const baseUrl of candidates) {
