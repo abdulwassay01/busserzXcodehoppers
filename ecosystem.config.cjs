@@ -21,7 +21,7 @@ module.exports = {
     {
       name: "busserz-frontend",
       script: "npx",
-      args: "serve -s out -p 3000",
+      args: "next start -p 3000",
       cwd: "./frontend",
       instances: 1,
       exec_mode: "fork",
