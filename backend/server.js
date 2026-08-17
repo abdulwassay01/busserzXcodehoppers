@@ -219,21 +219,41 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // POST DATA: Save JSON directly
-  if (req.method === 'POST' && (key || url.pathname === '/' || url.pathname.includes('data'))) {
+  // POST DATA: Fetch or Save JSON (Supports POST to get products and menus)
+  if (req.method === 'POST' && (key || url.pathname === '/' || url.pathname.includes('data') || url.pathname.includes('products') || url.pathname.includes('menus'))) {
     let body = '';
     req.on('data', (chunk) => {
       body += chunk;
     });
-    req.on('end', () => {
+    req.on('end', async () => {
       try {
         const payload = JSON.parse(body || '{}');
-        const targetKey = payload.key || key;
+        const targetKey = payload.key || key || (url.pathname.includes('product') ? 'products' : url.pathname.includes('menu') ? 'menus' : null);
+        const action = payload.action;
         const data = payload.data;
-        if (!targetKey || data === undefined) {
-          sendJson(res, 400, { error: 'Missing key or data' });
+
+        // If action is "get" or data is undefined, this POST request is GETTING products/menus data
+        if (action === 'get' || data === undefined) {
+          if (!targetKey) {
+            sendJson(res, 400, { error: 'Missing key parameter' });
+            return;
+          }
+
+          const filePath = getFilePath(targetKey);
+          const flag = readChangeFlag(targetKey);
+          let fileData = readJson(filePath, null);
+
+          if (!fileData || (flag && flag.changed)) {
+            console.log(`[BUSSERZ POST] Syncing fresh data for key=${targetKey} from API...`);
+            await syncBusserzData(targetKey);
+            fileData = readJson(filePath, null);
+          }
+
+          sendJson(res, 200, { key: targetKey, data: fileData });
           return;
         }
+
+        // Write data if provided
         writeJson(getFilePath(targetKey), data);
         clearChangeFlag(targetKey);
         sendJson(res, 200, { ok: true, key: targetKey, storedAt: new Date().toISOString() });

@@ -29,8 +29,18 @@ export function CacheStatusControl({
     const apiBase = getBackendApiBase();
     try {
       const [productsResponse, menuResponse] = await Promise.all([
-        fetch(`${apiBase}?key=products`, { cache: "no-store" }),
-        fetch(`${apiBase}?key=menus`, { cache: "no-store" }),
+        fetch(`${apiBase}?key=products`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "products", action: "get" }),
+          cache: "no-store",
+        }),
+        fetch(`${apiBase}?key=menus`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key: "menus", action: "get" }),
+          cache: "no-store",
+        }),
       ]);
 
       const productsPayload = productsResponse.ok ? await productsResponse.json() : null;
@@ -88,9 +98,10 @@ export function CacheStatusControl({
   };
 
   const handleClearAll = async () => {
+    const apiBase = getBackendApiBase();
     await Promise.all([
-      fetch("/api/data?key=products", { method: "DELETE" }),
-      fetch("/api/data?key=menus", { method: "DELETE" }),
+      fetch(`${apiBase}?key=products`, { method: "DELETE" }),
+      fetch(`${apiBase}?key=menus`, { method: "DELETE" }),
     ]);
     await checkCache();
     setMessage("🧹 All backend JSON data deleted!");

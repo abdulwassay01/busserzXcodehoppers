@@ -16,11 +16,13 @@ const BUSSERZ_API_KEY = process.env.BUSSERZ_API_KEY ?? "Y2tqOjpuAUmjo9Gqsayc1o1K
 const BUSSERZ_SPACE_ID = process.env.BUSSERZ_SPACE_ID ?? "PK00001002";
 export function getBackendApiBase(): string {
   const envUrl = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
-  if (envUrl && envUrl.trim() !== "" && !envUrl.includes("localhost")) {
+  if (envUrl && envUrl.trim() !== "") {
     return envUrl;
   }
   if (typeof window !== "undefined") {
-    return window.location.origin;
+    const hostname = window.location.hostname || "localhost";
+    const protocol = window.location.protocol || "http:";
+    return `${protocol}//${hostname}:4000`;
   }
   return process.env.BACKEND_API_BASE ?? "http://localhost:4000";
 }
@@ -260,9 +262,12 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
       }
     }
 
-    // 2. Fetch stored backend JSON data
+    // 2. Fetch stored backend JSON data using POST
     const response = await fetch(`${baseUrl}?key=${key}`, {
-      cache: 'no-store',
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ key, action: "get" }),
+      cache: "no-store",
     });
     const cType = response.headers.get("content-type") || "";
     if (!response.ok || !cType.includes("application/json")) {

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { Product } from "@/types/product";
-import { normalizeProduct, type RawEntity } from "@/lib/busserz";
+import { normalizeProduct, getBackendApiBase, type RawEntity } from "@/lib/busserz";
 
 type BackendPayload = {
   key?: string;
@@ -57,17 +57,20 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
 
     const loadProducts = async () => {
       try {
-        const candidates: string[] = [];
-        if (typeof window !== "undefined") {
-          candidates.push(`http://${window.location.hostname}:4000?key=products`);
-          candidates.push(`${window.location.origin}/busserz?key=products`);
-          candidates.push(`${window.location.origin}?key=products`);
-          candidates.push(`http://${window.location.hostname}:4000/api/data?key=products`);
+        const apiBase = getBackendApiBase();
+        const candidates: string[] = [apiBase];
+        if (typeof window !== "undefined" && !apiBase.includes(window.location.hostname)) {
+          candidates.push(`http://${window.location.hostname}:4000`);
         }
 
-        for (const url of candidates) {
+        for (const baseUrl of candidates) {
           try {
-            const res = await fetch(url, { cache: "no-store" });
+            const res = await fetch(`${baseUrl}?key=products`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ key: "products", action: "get" }),
+              cache: "no-store",
+            });
             const cType = res.headers.get("content-type") || "";
             if (res.ok && cType.includes("application/json")) {
               const payload = (await res.json()) as BackendPayload;

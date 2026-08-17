@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import type { MenuSection } from "@/types/menu";
-import { normalizeMenuSection, type RawEntity } from "@/lib/busserz";
+import { normalizeMenuSection, getBackendApiBase, type RawEntity } from "@/lib/busserz";
 
 type BackendPayload = {
   key?: string;
@@ -57,17 +57,20 @@ export function ClientMenuView({ initialMenus }: { initialMenus: MenuSection[] }
 
     const loadMenus = async () => {
       try {
-        const candidates: string[] = [];
-        if (typeof window !== "undefined") {
-          candidates.push(`http://${window.location.hostname}:4000?key=menus`);
-          candidates.push(`${window.location.origin}/busserz?key=menus`);
-          candidates.push(`${window.location.origin}?key=menus`);
-          candidates.push(`http://${window.location.hostname}:4000/api/data?key=menus`);
+        const apiBase = getBackendApiBase();
+        const candidates: string[] = [apiBase];
+        if (typeof window !== "undefined" && !apiBase.includes(window.location.hostname)) {
+          candidates.push(`http://${window.location.hostname}:4000`);
         }
 
-        for (const url of candidates) {
+        for (const baseUrl of candidates) {
           try {
-            const res = await fetch(url, { cache: "no-store" });
+            const res = await fetch(`${baseUrl}?key=menus`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ key: "menus", action: "get" }),
+              cache: "no-store",
+            });
             const cType = res.headers.get("content-type") || "";
             if (res.ok && cType.includes("application/json")) {
               const payload = (await res.json()) as BackendPayload;
