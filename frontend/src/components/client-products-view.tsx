@@ -57,27 +57,38 @@ export function ClientProductsView({ initialProducts }: { initialProducts: Produ
 
     const loadProducts = async () => {
       try {
-        const apiBase = getBackendApiBase();
-        const candidates: string[] = [apiBase];
-        if (typeof window !== "undefined" && !apiBase.includes(window.location.hostname)) {
-          candidates.push(`http://${window.location.hostname}:4000`);
+        const candidates: string[] = [];
+        const envBase = process.env.NEXT_PUBLIC_BACKEND_API_BASE;
+        if (envBase && envBase.trim() !== "") {
+          candidates.push(envBase);
+        }
+        if (typeof window !== "undefined") {
+          const { hostname, protocol, origin } = window.location;
+          candidates.push(`${protocol}//${hostname}:4000`);
+          candidates.push(`${origin}/busserz/api/data`);
+          candidates.push(`${origin}/api/data`);
+          candidates.push(`${origin}/busserz`);
         }
 
         for (const baseUrl of candidates) {
           try {
-            const res = await fetch(`${baseUrl}?key=products`, {
+            const fetchUrl = baseUrl.includes("?") ? baseUrl : `${baseUrl}?key=products`;
+            const res = await fetch(fetchUrl, {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({ key: "products", action: "get" }),
               cache: "no-store",
-            });
-            const cType = res.headers.get("content-type") || "";
-            if (res.ok && cType.includes("application/json")) {
-              const payload = (await res.json()) as BackendPayload;
-              const storedData = payload?.data;
-              if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
-                setProducts(processProductData(storedData.data));
-                return;
+            }).catch(() => null);
+
+            if (res && res.ok) {
+              const cType = res.headers.get("content-type") || "";
+              if (cType.includes("application/json")) {
+                const payload = (await res.json().catch(() => null)) as BackendPayload | null;
+                const storedData = payload?.data;
+                if (active && Array.isArray(storedData?.data) && storedData.data.length > 0) {
+                  setProducts(processProductData(storedData.data));
+                  return;
+                }
               }
             }
           } catch {

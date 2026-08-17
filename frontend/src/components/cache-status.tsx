@@ -34,17 +34,17 @@ export function CacheStatusControl({
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key: "products", action: "get" }),
           cache: "no-store",
-        }),
+        }).catch(() => null),
         fetch(`${apiBase}?key=menus`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key: "menus", action: "get" }),
           cache: "no-store",
-        }),
+        }).catch(() => null),
       ]);
 
-      const productsPayload = productsResponse.ok ? await productsResponse.json() : null;
-      const menuPayload = menuResponse.ok ? await menuResponse.json() : null;
+      const productsPayload = productsResponse && productsResponse.ok ? await productsResponse.json().catch(() => null) : null;
+      const menuPayload = menuResponse && menuResponse.ok ? await menuResponse.json().catch(() => null) : null;
 
       setCacheInfo({
         products: productsPayload?.data?.data?.length

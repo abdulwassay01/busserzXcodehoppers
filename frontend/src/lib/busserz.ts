@@ -262,15 +262,15 @@ async function readPersistedData<T>(key: string): Promise<PersistedEnvelope<T> |
       }
     }
 
-    // 2. Fetch stored backend JSON data using POST
+    // 2. Fetch stored backend JSON data using POST with graceful network error handling
     const response = await fetch(`${baseUrl}?key=${key}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ key, action: "get" }),
       cache: "no-store",
-    });
-    const cType = response.headers.get("content-type") || "";
-    if (!response.ok || !cType.includes("application/json")) {
+    }).catch(() => null);
+
+    if (!response || !response.ok) {
       return null;
     }
 
